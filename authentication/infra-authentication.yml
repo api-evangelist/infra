@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+docs: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+note: The OpenAPI document does not declare formal securitySchemes; this profile is
+  captured from the documented API reference.
+summary:
+  types:
+  - http-bearer
+  api_key_in: []
+  oauth2_flows:
+  - deviceCode
+schemes:
+- name: accessKey
+  type: http
+  scheme: bearer
+  description: 'All authenticated requests send Authorization: Bearer <ACCESSKEY>.
+    Access keys are organization-scoped and inherit the permissions of the identity
+    that created them. Keys carry an expiry and inactivity timeout.'
+  sources:
+  - https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+- name: infraVersionHeader
+  type: apiKey
+  in: header
+  parameter_name: Infra-Version
+  description: Required on every request; pins the API contract version (e.g. 0.18.1).
+    Not a credential, but mandatory alongside the bearer access key.
+- name: oidcLogin
+  type: openIdConnect
+  description: Interactive login via a configured OIDC identity provider (Okta, Google,
+    Azure AD, etc.). POST /api/login with an `oidc` credential (providerID, code,
+    redirectURL); also supports the OAuth2 device authorization flow (/api/device).
+- name: passwordLogin
+  type: http
+  scheme: basic
+  description: POST /api/login with `passwordCredentials` (name + password) for local
+    identities; includes password reset endpoints.
