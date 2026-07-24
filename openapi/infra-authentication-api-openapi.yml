@@ -1,0 +1,1054 @@
+openapi: 3.0.0
+info:
+  description: Infra API
+  license:
+    name: Elastic License v2.0
+    url: https://www.elastic.co/licensing/elastic-license
+  title: Infra Authentication API
+  version: 0.0.0
+servers:
+- url: https://api.infrahq.com
+tags:
+- name: Authentication
+paths:
+  /api/access-keys:
+    delete:
+      description: DeleteAccessKeys
+      operationId: DeleteAccessKeys
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          description: Bearer followed by your access key
+          example: Bearer ACCESSKEY
+          format: Bearer [\da-zA-Z]{10}\.[\da-zA-Z]{24}
+          type: string
+      - description: Name of the access key to delete
+        example: cicdkey
+        in: query
+        name: name
+        schema:
+          description: Name of the access key to delete
+          example: cicdkey
+          format: '[a-zA-Z0-9\-_.]'
+          maxLength: 256
+          minLength: 2
+          type: string
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+          description: Success
+      summary: DeleteAccessKeys
+      tags:
+      - Authentication
+    get:
+      description: ListAccessKeys
+      operationId: ListAccessKeys
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          description: Bearer followed by your access key
+          example: Bearer ACCESSKEY
+          format: Bearer [\da-zA-Z]{10}\.[\da-zA-Z]{24}
+          type: string
+      - description: UserID of the user whose access keys you want to list
+        in: query
+        name: userID
+        schema:
+          description: UserID of the user whose access keys you want to list
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+      - description: Name of the user
+        example: john@example.com
+        in: query
+        name: name
+        schema:
+          description: Name of the user
+          example: john@example.com
+          type: string
+      - description: Whether to show expired access keys. Defaults to false
+        example: 'true'
+        in: query
+        name: showExpired
+        schema:
+          description: Whether to show expired access keys. Defaults to false
+          example: 'true'
+          type: boolean
+      - description: Page number to retrieve
+        example: '1'
+        in: query
+        name: page
+        schema:
+          description: Page number to retrieve
+          example: '1'
+          format: int
+          minimum: 0
+          type: integer
+      - description: Number of objects to retrieve per page (up to 1000)
+        example: '100'
+        in: query
+        name: limit
+        schema:
+          description: Number of objects to retrieve per page (up to 1000)
+          example: '100'
+          format: int
+          maximum: 1000
+          minimum: 0
+          type: integer
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListResponse_AccessKey'
+          description: Success
+      summary: ListAccessKeys
+      tags:
+      - Authentication
+    post:
+      description: CreateAccessKey
+      operationId: CreateAccessKey
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          description: Bearer followed by your access key
+          example: Bearer ACCESSKEY
+          format: Bearer [\da-zA-Z]{10}\.[\da-zA-Z]{24}
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                expiry:
+                  description: maximum time valid
+                  example: 72h3m6.5s
+                  format: duration
+                  type: string
+                inactivityTimeout:
+                  description: key must be used within this duration to remain valid
+                  example: 72h3m6.5s
+                  format: duration
+                  type: string
+                issuedForID:
+                  example: 4yJ3n3D8E2
+                  format: uid
+                  pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                  type: string
+                issuedForKind:
+                  enum:
+                  - user
+                  - provider
+                  - organization
+                  type: string
+                name:
+                  format: '[a-zA-Z0-9\-_.]'
+                  maxLength: 256
+                  minLength: 2
+                  type: string
+              required:
+              - issuedForID
+              - issuedForKind
+              - expiry
+              - inactivityTimeout
+              type: object
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateAccessKeyResponse'
+          description: Success
+      summary: CreateAccessKey
+      tags:
+      - Authentication
+  /api/access-keys/{id}:
+    delete:
+      description: DeleteAccessKey
+      operationId: DeleteAccessKey
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          description: Bearer followed by your access key
+          example: Bearer ACCESSKEY
+          format: Bearer [\da-zA-Z]{10}\.[\da-zA-Z]{24}
+          type: string
+      - in: path
+        name: id
+        required: true
+        schema:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+          description: Success
+      summary: DeleteAccessKey
+      tags:
+      - Authentication
+  /api/device:
+    post:
+      description: StartDeviceFlow
+      operationId: StartDeviceFlow
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceFlowResponse'
+          description: Success
+      summary: StartDeviceFlow
+      tags:
+      - Authentication
+  /api/device/approve:
+    post:
+      description: ApproveDeviceFlow
+      operationId: ApproveDeviceFlow
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          description: Bearer followed by your access key
+          example: Bearer ACCESSKEY
+          format: Bearer [\da-zA-Z]{10}\.[\da-zA-Z]{24}
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                userCode:
+                  example: BDSD-HQMK
+                  format: '[B-DF-HJ-NP-TV-XZ\-]'
+                  maxLength: 9
+                  minLength: 8
+                  type: string
+              type: object
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+          description: Success
+      summary: ApproveDeviceFlow
+      tags:
+      - Authentication
+  /api/device/status:
+    post:
+      description: GetDeviceFlowStatus
+      operationId: GetDeviceFlowStatus
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                deviceCode:
+                  format: '[a-zA-Z0-9]'
+                  maxLength: 38
+                  minLength: 38
+                  type: string
+              type: object
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceFlowStatusResponse'
+          description: Success
+      summary: GetDeviceFlowStatus
+      tags:
+      - Authentication
+  /api/login:
+    post:
+      description: Login
+      operationId: Login
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - required:
+                - accessKey
+              - required:
+                - passwordCredentials
+              - required:
+                - oidc
+              properties:
+                accessKey:
+                  type: string
+                oidc:
+                  properties:
+                    code:
+                      type: string
+                    providerID:
+                      example: 4yJ3n3D8E2
+                      format: uid
+                      pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                      type: string
+                    redirectURL:
+                      type: string
+                  required:
+                  - redirectURL
+                  - code
+                  type: object
+                passwordCredentials:
+                  properties:
+                    name:
+                      type: string
+                    password:
+                      type: string
+                  required:
+                  - name
+                  - password
+                  type: object
+              type: object
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+          description: Success
+      summary: Login
+      tags:
+      - Authentication
+  /api/logout:
+    post:
+      description: Logout
+      operationId: Logout
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          description: Bearer followed by your access key
+          example: Bearer ACCESSKEY
+          format: Bearer [\da-zA-Z]{10}\.[\da-zA-Z]{24}
+          type: string
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+          description: Success
+      summary: Logout
+      tags:
+      - Authentication
+  /api/password-reset:
+    post:
+      description: VerifiedPasswordReset
+      operationId: VerifiedPasswordReset
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                password:
+                  type: string
+                token:
+                  format: '[a-zA-Z0-9]'
+                  maxLength: 10
+                  minLength: 10
+                  type: string
+              required:
+              - token
+              - password
+              type: object
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+          description: Success
+      summary: VerifiedPasswordReset
+      tags:
+      - Authentication
+  /api/password-reset-request:
+    post:
+      description: RequestPasswordReset
+      operationId: RequestPasswordReset
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                email:
+                  format: email
+                  type: string
+              required:
+              - email
+              type: object
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+          description: Success
+      summary: RequestPasswordReset
+      tags:
+      - Authentication
+components:
+  schemas:
+    DeviceFlowResponse:
+      properties:
+        deviceCode:
+          description: a code that a device will use to exchange for an access key after device login is approved
+          example: NGU4QWFiNjQ5YmQwNG3YTdmZMEyNzQ3YzQ1YSA
+          type: string
+        expiresIn:
+          description: The number of seconds that this set of values is valid
+          example: '1800'
+          format: int16
+          type: integer
+        interval:
+          description: the number of seconds the device should wait between polling to see if the user has finished logging in
+          example: '5'
+          format: int8
+          type: integer
+        userCode:
+          description: This is the text the user will enter at the Verification URI
+          example: BDSD-HQMK
+          type: string
+        verificationURI:
+          description: This is the URL the user needs to enter into their browser to start logging in
+          example: https://infrahq.com/device
+          type: string
+    LoginResponse:
+      properties:
+        accessKey:
+          type: string
+        expires:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        name:
+          type: string
+        organizationName:
+          type: string
+        passwordUpdateRequired:
+          type: boolean
+        userID:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+    Error:
+      properties:
+        code:
+          format: int32
+          type: integer
+        fieldErrors:
+          items:
+            properties:
+              errors:
+                items:
+                  type: string
+                type: array
+              fieldName:
+                type: string
+            type: object
+          type: array
+        message:
+          type: string
+    ListResponse_AccessKey:
+      properties:
+        count:
+          description: Total number of items on the current page
+          example: '100'
+          format: int
+          type: integer
+        items:
+          items:
+            properties:
+              created:
+                description: formatted as an RFC3339 date-time
+                example: '2022-03-14T09:48:00Z'
+                format: date-time
+                type: string
+              expires:
+                description: key is no longer valid after this time
+                example: '2022-03-14T09:48:00Z'
+                format: date-time
+                type: string
+              id:
+                description: ID of the access key
+                example: 4yJ3n3D8E2
+                format: uid
+                pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                type: string
+              inactivityTimeout:
+                description: key must be used by this time to remain valid
+                example: '2022-03-14T09:48:00Z'
+                format: date-time
+                type: string
+              issuedForID:
+                description: ID of the entity the key was issued to
+                example: 4yJ3n3D8E2
+                format: uid
+                pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                type: string
+              issuedForKind:
+                description: 'the kind entity the key was issued for (eg: user, organization, or provider)'
+                example: user
+                type: string
+              issuedForName:
+                description: Name of the user the key was issued to
+                example: admin@example.com
+                type: string
+              lastUsed:
+                description: formatted as an RFC3339 date-time
+                example: '2022-03-14T09:48:00Z'
+                format: date-time
+                type: string
+              name:
+                description: Name of the access key
+                example: cicdkey
+                type: string
+              providerID:
+                description: ID of the provider if the user is managed by an OIDC provider
+                example: 4yJ3n3D8E2
+                format: uid
+                pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                type: string
+              scopes:
+                description: additional access level scopes that control what an access key can do
+                items:
+                  description: additional access level scopes that control what an access key can do
+                  type: string
+                type: array
+            type: object
+          type: array
+        limit:
+          description: Number of objects per page
+          example: '100'
+          format: int
+          type: integer
+        page:
+          description: Page number retrieved
+          example: '1'
+          format: int
+          type: integer
+        totalCount:
+          description: Total number of objects
+          example: '485'
+          format: int
+          type: integer
+        totalPages:
+          description: Total number of pages
+          example: '5'
+          format: int
+          type: integer
+    CreateAccessKeyResponse:
+      properties:
+        accessKey:
+          type: string
+        created:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        expires:
+          description: after this deadline the key is no longer valid
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        id:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        inactivityTimeout:
+          description: the key must be used by this time to remain valid
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        issuedForID:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        issuedForKind:
+          type: string
+        name:
+          type: string
+        providerID:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+    EmptyResponse: {}
+    DeviceFlowStatusResponse:
+      properties:
+        deviceCode:
+          example: ''
+          type: string
+        login:
+          properties:
+            accessKey:
+              type: string
+            expires:
+              description: formatted as an RFC3339 date-time
+              example: '2022-03-14T09:48:00Z'
+              format: date-time
+              type: string
+            name:
+              type: string
+            organizationName:
+              type: string
+            passwordUpdateRequired:
+              type: boolean
+            userID:
+              example: 4yJ3n3D8E2
+              format: uid
+              pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+              type: string
+          type: object
+        status:
+          description: can be one of pending, expired, confirmed
+          type: string

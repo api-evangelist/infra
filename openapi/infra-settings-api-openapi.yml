@@ -1,0 +1,200 @@
+openapi: 3.0.0
+info:
+  description: Infra API
+  license:
+    name: Elastic License v2.0
+    url: https://www.elastic.co/licensing/elastic-license
+  title: Infra Authentication Settings API
+  version: 0.0.0
+servers:
+- url: https://api.infrahq.com
+tags:
+- name: Settings
+paths:
+  /api/server-configuration:
+    get:
+      description: GetServerConfiguration
+      operationId: GetServerConfiguration
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServerConfiguration'
+          description: Success
+      summary: GetServerConfiguration
+      tags:
+      - Settings
+  /api/version:
+    get:
+      description: Version
+      operationId: Version
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Version'
+          description: Success
+      summary: Version
+      tags:
+      - Settings
+components:
+  schemas:
+    Error:
+      properties:
+        code:
+          format: int32
+          type: integer
+        fieldErrors:
+          items:
+            properties:
+              errors:
+                items:
+                  type: string
+                type: array
+              fieldName:
+                type: string
+            type: object
+          type: array
+        message:
+          type: string
+    Version:
+      properties:
+        version:
+          type: string
+    ServerConfiguration:
+      properties:
+        baseDomain:
+          type: string
+        google:
+          properties:
+            authURL:
+              description: Authorize endpoint for the OIDC provider
+              example: https://example.com/oauth2/v1/authorize
+              type: string
+            clientID:
+              description: Client ID for the OIDC provider
+              example: 0oapn0qwiQPiMIyR35d6
+              type: string
+            created:
+              description: formatted as an RFC3339 date-time
+              example: '2022-03-14T09:48:00Z'
+              format: date-time
+              type: string
+            id:
+              description: Provider ID
+              example: 4yJ3n3D8E2
+              format: uid
+              pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+              type: string
+            kind:
+              description: Kind of provider
+              example: oidc
+              type: string
+            name:
+              description: Name of the provider
+              example: okta
+              type: string
+            scopes:
+              description: Scopes set in the OIDC provider configuration
+              example: '[''openid'', ''email'']'
+              items:
+                description: Scopes set in the OIDC provider configuration
+                example: '[''openid'', ''email'']'
+                type: string
+              type: array
+            updated:
+              description: formatted as an RFC3339 date-time
+              example: '2022-03-14T09:48:00Z'
+              format: date-time
+              type: string
+            url:
+              description: URL of the Infra Server
+              example: infrahq.okta.com
+              type: string
+          type: object
+        isEmailConfigured:
+          type: boolean
+        isSignupEnabled:
+          type: boolean
+        loginDomain:
+          type: string

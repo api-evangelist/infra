@@ -1,0 +1,755 @@
+openapi: 3.0.0
+info:
+  description: Infra API
+  license:
+    name: Elastic License v2.0
+    url: https://www.elastic.co/licensing/elastic-license
+  title: Infra Authentication Grants API
+  version: 0.0.0
+servers:
+- url: https://api.infrahq.com
+tags:
+- name: Grants
+paths:
+  /api/grants:
+    get:
+      description: ListGrants
+      operationId: ListGrants
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          description: Bearer followed by your access key
+          example: Bearer ACCESSKEY
+          format: Bearer [\da-zA-Z]{10}\.[\da-zA-Z]{24}
+          type: string
+      - description: ID of user granted access
+        example: 6TjWTAgYYu
+        in: query
+        name: user
+        schema:
+          description: ID of user granted access
+          example: 6TjWTAgYYu
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+      - description: ID of group granted access
+        example: 6k3Eqcqu6B
+        in: query
+        name: group
+        schema:
+          description: ID of group granted access
+          example: 6k3Eqcqu6B
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+      - description: a resource name
+        example: production.namespace
+        in: query
+        name: resource
+        schema:
+          description: a resource name
+          example: production.namespace
+          type: string
+      - description: name of the destination where a connector is installed
+        example: production
+        in: query
+        name: destination
+        schema:
+          description: name of the destination where a connector is installed
+          example: production
+          format: '[a-zA-Z0-9\-_]'
+          maxLength: 256
+          minLength: 2
+          type: string
+      - description: a role or permission
+        example: view
+        in: query
+        name: privilege
+        schema:
+          description: a role or permission
+          example: view
+          type: string
+      - description: if true, this field includes grants that the user inherits through groups
+        example: 'true'
+        in: query
+        name: showInherited
+        schema:
+          description: if true, this field includes grants that the user inherits through groups
+          example: 'true'
+          type: boolean
+      - description: if true, this shows the connector and other internal grants
+        example: 'false'
+        in: query
+        name: showSystem
+        schema:
+          description: if true, this shows the connector and other internal grants
+          example: 'false'
+          type: boolean
+      - description: set this to the value of the Last-Update-Index response header to block until the list results have changed
+        in: query
+        name: lastUpdateIndex
+        schema:
+          description: set this to the value of the Last-Update-Index response header to block until the list results have changed
+          format: int64
+          type: integer
+      - description: Page number to retrieve
+        example: '1'
+        in: query
+        name: page
+        schema:
+          description: Page number to retrieve
+          example: '1'
+          format: int
+          minimum: 0
+          type: integer
+      - description: Number of objects to retrieve per page (up to 1000)
+        example: '100'
+        in: query
+        name: limit
+        schema:
+          description: Number of objects to retrieve per page (up to 1000)
+          example: '100'
+          format: int
+          maximum: 1000
+          minimum: 0
+          type: integer
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListResponse_Grant'
+          description: Success
+      summary: ListGrants
+      tags:
+      - Grants
+    patch:
+      description: UpdateGrants
+      operationId: UpdateGrants
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          description: Bearer followed by your access key
+          example: Bearer ACCESSKEY
+          format: Bearer [\da-zA-Z]{10}\.[\da-zA-Z]{24}
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                grantsToAdd:
+                  description: List of grant objects. See POST api/grants for more
+                  items:
+                    description: List of grant objects. See POST api/grants for more
+                    oneOf:
+                    - required:
+                      - user
+                    - required:
+                      - userName
+                    - required:
+                      - group
+                    - required:
+                      - groupName
+                    properties:
+                      group:
+                        description: ID of the group granted access
+                        example: 6Ti2p7r1h7
+                        format: uid
+                        pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                        type: string
+                      groupName:
+                        description: Name of the group granted access
+                        example: dev
+                        type: string
+                      privilege:
+                        description: a role or permission
+                        example: view
+                        type: string
+                      resource:
+                        description: a resource name in Infra's Universal Resource Notation
+                        example: production
+                        type: string
+                      user:
+                        description: ID of the user granted access
+                        example: 6kdoMDd6PA
+                        format: uid
+                        pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                        type: string
+                      userName:
+                        description: Name of the user granted access
+                        example: admin@example.com
+                        type: string
+                    required:
+                    - privilege
+                    - resource
+                    type: object
+                  type: array
+                grantsToRemove:
+                  description: List of grant objects. See POST api/grants for more
+                  items:
+                    description: List of grant objects. See POST api/grants for more
+                    oneOf:
+                    - required:
+                      - user
+                    - required:
+                      - userName
+                    - required:
+                      - group
+                    - required:
+                      - groupName
+                    properties:
+                      group:
+                        description: ID of the group granted access
+                        example: 6Ti2p7r1h7
+                        format: uid
+                        pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                        type: string
+                      groupName:
+                        description: Name of the group granted access
+                        example: dev
+                        type: string
+                      privilege:
+                        description: a role or permission
+                        example: view
+                        type: string
+                      resource:
+                        description: a resource name in Infra's Universal Resource Notation
+                        example: production
+                        type: string
+                      user:
+                        description: ID of the user granted access
+                        example: 6kdoMDd6PA
+                        format: uid
+                        pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                        type: string
+                      userName:
+                        description: Name of the user granted access
+                        example: admin@example.com
+                        type: string
+                    required:
+                    - privilege
+                    - resource
+                    type: object
+                  type: array
+              type: object
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+          description: Success
+      summary: UpdateGrants
+      tags:
+      - Grants
+    post:
+      description: CreateGrant
+      operationId: CreateGrant
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          description: Bearer followed by your access key
+          example: Bearer ACCESSKEY
+          format: Bearer [\da-zA-Z]{10}\.[\da-zA-Z]{24}
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - required:
+                - user
+              - required:
+                - userName
+              - required:
+                - group
+              - required:
+                - groupName
+              properties:
+                group:
+                  description: ID of the group granted access
+                  example: 6Ti2p7r1h7
+                  format: uid
+                  pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                  type: string
+                groupName:
+                  description: Name of the group granted access
+                  example: dev
+                  type: string
+                privilege:
+                  description: a role or permission
+                  example: view
+                  type: string
+                resource:
+                  description: a resource name in Infra's Universal Resource Notation
+                  example: production
+                  type: string
+                user:
+                  description: ID of the user granted access
+                  example: 6kdoMDd6PA
+                  format: uid
+                  pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                  type: string
+                userName:
+                  description: Name of the user granted access
+                  example: admin@example.com
+                  type: string
+              required:
+              - privilege
+              - resource
+              type: object
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateGrantResponse'
+          description: Success
+      summary: CreateGrant
+      tags:
+      - Grants
+  /api/grants/{id}:
+    delete:
+      description: DeleteGrant
+      operationId: DeleteGrant
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          description: Bearer followed by your access key
+          example: Bearer ACCESSKEY
+          format: Bearer [\da-zA-Z]{10}\.[\da-zA-Z]{24}
+          type: string
+      - in: path
+        name: id
+        required: true
+        schema:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+          description: Success
+      summary: DeleteGrant
+      tags:
+      - Grants
+    get:
+      description: GetGrant
+      operationId: GetGrant
+      parameters:
+      - in: header
+        name: Infra-Version
+        required: true
+        schema:
+          description: Version of the API being requested
+          example: 0.0.0
+          format: \d+\.\d+\(.\d+)?(-.\w(+\w)?)?
+          type: string
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          description: Bearer followed by your access key
+          example: Bearer ACCESSKEY
+          format: Bearer [\da-zA-Z]{10}\.[\da-zA-Z]{24}
+          type: string
+      - in: path
+        name: id
+        required: true
+        schema:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+      responses:
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Unauthorized: Requestor is not authenticated'
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: 'Forbidden: Requestor does not have the right permissions'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Duplicate Record
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Grant'
+          description: Success
+      summary: GetGrant
+      tags:
+      - Grants
+components:
+  schemas:
+    ListResponse_Grant:
+      properties:
+        count:
+          description: Total number of items on the current page
+          example: '100'
+          format: int
+          type: integer
+        items:
+          items:
+            properties:
+              created:
+                description: formatted as an RFC3339 date-time
+                example: '2022-03-14T09:48:00Z'
+                format: date-time
+                type: string
+              createdBy:
+                description: id of the user that created the grant
+                example: 4yJ3n3D8E2
+                format: uid
+                pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                type: string
+              group:
+                description: GroupID for a group being granted access
+                example: 3zMaadcd2U
+                format: uid
+                pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                type: string
+              id:
+                description: ID of grant created
+                example: 3w9XyTrkzk
+                format: uid
+                pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                type: string
+              privilege:
+                description: a role or permission
+                example: admin
+                type: string
+              resource:
+                description: a resource name in Infra's Universal Resource Notation
+                example: production.namespace
+                type: string
+              updated:
+                description: formatted as an RFC3339 date-time
+                example: '2022-03-14T09:48:00Z'
+                format: date-time
+                type: string
+              user:
+                description: UserID for a user being granted access
+                example: 6hNnjfjVcc
+                format: uid
+                pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+                type: string
+            type: object
+          type: array
+        limit:
+          description: Number of objects per page
+          example: '100'
+          format: int
+          type: integer
+        page:
+          description: Page number retrieved
+          example: '1'
+          format: int
+          type: integer
+        totalCount:
+          description: Total number of objects
+          example: '485'
+          format: int
+          type: integer
+        totalPages:
+          description: Total number of pages
+          example: '5'
+          format: int
+          type: integer
+    Grant:
+      properties:
+        created:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        createdBy:
+          description: id of the user that created the grant
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        group:
+          description: GroupID for a group being granted access
+          example: 3zMaadcd2U
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        id:
+          description: ID of grant created
+          example: 3w9XyTrkzk
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        privilege:
+          description: a role or permission
+          example: admin
+          type: string
+        resource:
+          description: a resource name in Infra's Universal Resource Notation
+          example: production.namespace
+          type: string
+        updated:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        user:
+          description: UserID for a user being granted access
+          example: 6hNnjfjVcc
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+    CreateGrantResponse:
+      properties:
+        created:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        createdBy:
+          description: id of the user that created the grant
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        group:
+          description: GroupID for a group being granted access
+          example: 3zMaadcd2U
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        id:
+          description: ID of grant created
+          example: 3w9XyTrkzk
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        privilege:
+          description: a role or permission
+          example: admin
+          type: string
+        resource:
+          description: a resource name in Infra's Universal Resource Notation
+          example: production.namespace
+          type: string
+        updated:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        user:
+          description: UserID for a user being granted access
+          example: 6hNnjfjVcc
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        wasCreated:
+          description: Indicates that grant was successfully created, false it already existed beforehand
+          example: 'true'
+          type: boolean
+    Error:
+      properties:
+        code:
+          format: int32
+          type: integer
+        fieldErrors:
+          items:
+            properties:
+              errors:
+                items:
+                  type: string
+                type: array
+              fieldName:
+                type: string
+            type: object
+          type: array
+        message:
+          type: string
+    EmptyResponse: {}
