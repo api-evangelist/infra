@@ -1,0 +1,21 @@
+generated: '2026-07-19'
+method: searched
+source: https://pkg.go.dev/github.com/infrahq/infra
+packages:
+- language: go
+  registry: pkg.go.dev
+  name: github.com/infrahq/infra/api
+  url: https://pkg.go.dev/github.com/infrahq/infra/api
+  install: go get github.com/infrahq/infra/api
+  official: true
+  license: MIT
+  notes: First-party Go API client package. The Infra SDK and connectors are MIT-licensed;
+    the core API/UI/CLI are Elastic License 2.0.
+- language: go
+  registry: pkg.go.dev
+  name: github.com/infrahq/infra
+  url: https://pkg.go.dev/github.com/infrahq/infra
+  install: go install github.com/infrahq/infra@latest
+  official: true
+  notes: The `infra` CLI and server module (Elastic License 2.0). Distributed primarily
+    as prebuilt binaries via GitHub releases; the CLI command surface is in cli/infra-cli.yml.

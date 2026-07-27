@@ -1,0 +1,70 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/infra-openapi-original.json
+entities:
+- name: Organization
+  fields: [id, name, domain, allowedDomains, created, updated]
+  description: Top-level tenant; users, groups, providers, destinations and grants
+    all belong to an organization.
+- name: User
+  fields: [id, name, providerNames, publicKeys, sshLoginName, lastSeenAt, created, updated]
+  description: An identity that can be granted access.
+- name: Group
+  fields: [id, name, totalUsers, created, updated]
+  description: A collection of users; grants applied to a group apply to its members.
+- name: Provider
+  fields: [id, name, kind, url, authURL, clientID, scopes, created, updated]
+  description: An OIDC identity provider (Okta, Google, Azure AD, ...) that authenticates users.
+- name: Destination
+  fields: [id, name, kind, uniqueID, connection, connected, resources, roles, version, lastSeen, created, updated]
+  description: A connected infrastructure target (Kubernetes cluster, server, database)
+    with resources and roles.
+- name: Grant
+  fields: [id, user, group, privilege, resource, createdBy, created, updated]
+  description: Binds a subject (user or group) to a privilege on a destination resource.
+- name: AccessKey
+  fields: [id, name, accessKey, issuedForID, issuedForKind, providerID, expires, inactivityTimeout, created]
+  description: A bearer credential issued for a user/identity for CI/CD or API use.
+- name: UserPublicKey
+  fields: [id, name, keyType, publicKey, fingerprint, expires, created]
+  description: An SSH public key registered to a user for infrastructure access.
+relationships:
+- from: User
+  to: Organization
+  type: belongs_to
+- from: Group
+  to: Organization
+  type: belongs_to
+- from: Group
+  to: User
+  type: has_many
+  via: users (PATCH /api/groups/{id}/users)
+- from: Provider
+  to: Organization
+  type: belongs_to
+- from: Destination
+  to: Organization
+  type: belongs_to
+- from: Grant
+  to: User
+  type: belongs_to
+  via: user
+- from: Grant
+  to: Group
+  type: belongs_to
+  via: group
+- from: Grant
+  to: Destination
+  type: references
+  via: resource
+- from: AccessKey
+  to: User
+  type: belongs_to
+  via: issuedForID
+- from: AccessKey
+  to: Provider
+  type: references
+  via: providerID
+- from: UserPublicKey
+  to: User
+  type: belongs_to

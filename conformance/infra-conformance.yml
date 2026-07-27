@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/infra-openapi-original.json
+standards:
+- id: oidc
+  conforms: true
+  evidence: Providers are OIDC identity providers (authURL, clientID, scopes); login
+    supports an `oidc` credential with providerID + code + redirectURL.
+- id: oauth2-device-flow
+  conforms: true
+  evidence: /api/device, /api/device/approve, /api/device/status implement RFC 8628
+    device authorization flow (StartDeviceFlow/ApproveDeviceFlow/GetDeviceFlowStatus).
+- id: bearer-token-auth
+  conforms: true
+  evidence: Authorization; Bearer access-key header on all authenticated operations.
+- id: pagination
+  conforms: true
+  evidence: page/limit query params; responses carry page/limit/totalPages/totalCount.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom {code,message,fieldErrors} envelope (application/json),
+    not application/problem+json.
+- id: idempotency
+  conforms: false
+  evidence: No Idempotency-Key header or documented idempotency contract.
+- id: json-api
+  conforms: false
+- id: scim
+  conforms: false
+- id: fhir-r4
+  conforms: false

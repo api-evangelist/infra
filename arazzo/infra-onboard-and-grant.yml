@@ -1,0 +1,52 @@
+arazzo: 1.0.1
+info:
+  title: Onboard a user and grant destination access
+  version: 1.0.0
+  summary: Create a user, put them in a group, and grant the group access to a destination.
+sourceDescriptions:
+- name: infra
+  url: ../openapi/infra-openapi-original.json
+  type: openapi
+workflows:
+- workflowId: onboardAndGrant
+  summary: Create a user, add them to a group, and grant the group a privilege on a destination.
+  inputs:
+    type: object
+    properties:
+      userName: { type: string }
+      groupId: { type: string }
+      privilege: { type: string }
+      resource: { type: string }
+  steps:
+  - stepId: createUser
+    operationId: CreateUser
+    requestBody:
+      contentType: application/json
+      payload:
+        name: $inputs.userName
+    outputs:
+      userId: $response.body#/id
+  - stepId: addToGroup
+    operationId: UpdateUsersInGroup
+    parameters:
+    - name: id
+      in: path
+      value: $inputs.groupId
+    requestBody:
+      contentType: application/json
+      payload:
+        usersToAdd:
+        - $steps.createUser.outputs.userId
+  - stepId: grantAccess
+    operationId: CreateGrant
+    requestBody:
+      contentType: application/json
+      payload:
+        group: $inputs.groupId
+        privilege: $inputs.privilege
+        resource: $inputs.resource
+    outputs:
+      grantId: $response.body#/id
+  outputs:
+    userId: $steps.createUser.outputs.userId
+    grantId: $steps.grantAccess.outputs.grantId

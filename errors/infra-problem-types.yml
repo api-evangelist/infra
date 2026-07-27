@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/infra-openapi-original.json
+docs: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+format: custom-json
+envelope:
+  media_type: application/json
+  shape: '{ "code": <int http status>, "message": <string>, "fieldErrors": [ { "fieldName":
+    <string>, "errors": [<string>] } ] }'
+  note: Not RFC 9457. `code` mirrors the HTTP status; `fieldErrors` carries per-field
+    validation messages on 400s.
+problems:
+- status: 400
+  title: Bad request
+  meaning: Malformed request or failed validation; inspect fieldErrors for the offending
+    fields.
+- status: 401
+  title: Unauthorized
+  meaning: Missing/invalid access key in the Authorization header, or missing Infra-Version
+    header.
+- status: 403
+  title: Forbidden
+  meaning: Authenticated identity lacks the grant/privilege required for the resource.
+- status: 404
+  title: Not found
+  meaning: Resource id does not exist or is not visible to the caller.
+- status: 409
+  title: Conflict
+  meaning: Uniqueness/state conflict (e.g. duplicate name, already-existing resource).
+- status: 429
+  title: Too many requests
+  meaning: Rate limited (documented in api.md; not enumerated per-operation in the spec).
+- status: 500
+  title: Internal server error
+  meaning: Unexpected server-side failure.
+sources_operations_note: Every operation in openapi/infra-openapi-original.json declares
+  400/401/403/404/409 plus a `default` Error response using the schema above.

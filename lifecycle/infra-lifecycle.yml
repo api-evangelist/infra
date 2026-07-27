@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+versioning:
+  scheme: header
+  header: Infra-Version
+  current: 0.18.1
+  latest_release: v0.21.0
+  docs: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+  note: Clients pin an `Infra-Version` header and hold it until they adopt newer features.
+    Release/CLI versioning is semver in the 0.x range.
+releases: https://github.com/infrahq/infra/releases
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No formal deprecation/sunset policy published. v0.21.0 removed `providers`/`grants`
+    from server config (moved to the Terraform provider) — a breaking change noted only
+    in release notes.
+sla:
+  url: null
+  note: Open-source, self-hosted; no hosted SLA. The hosted service at api.infrahq.com
+    is no longer reachable (infrahq.com now redirects to the GitHub repository).
+status_page: null
+deprecated_operations: []
+project_status: Dormant. Latest release v0.21.0 (Jan 2024); hosted offering wound down.
+  Source remains available under Elastic License 2.0 (core) / MIT (SDK + connectors).

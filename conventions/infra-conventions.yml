@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+authentication:
+  style: bearer access key
+  header: 'Authorization: Bearer <ACCESSKEY>'
+  see: authentication/infra-authentication.yml
+required_headers:
+- name: Infra-Version
+  required: true
+  description: Pins the API contract version (e.g. 0.18.1) on every request.
+- name: Authorization
+  required: true
+  description: Bearer access key for authenticated operations.
+idempotency:
+  supported: false
+  note: No Idempotency-Key header or documented idempotency contract.
+pagination:
+  style: page-number
+  params:
+  - page (default 1)
+  - limit (default 100, max 1000)
+  response_fields:
+  - page
+  - limit
+  - totalPages
+  - totalCount
+  see: errors/infra-problem-types.yml
+error_envelope:
+  media_type: application/json
+  shape: '{ code, message, fieldErrors[] }'
+  rfc9457: false
+  see: errors/infra-problem-types.yml
+versioning:
+  style: request-header
+  header: Infra-Version
+  see: lifecycle/infra-lifecycle.yml
+metadata:
+  note: Resources carry `created`/`updated` RFC3339 timestamps; grants carry `createdBy`.
+rate_limit_signaling:
+  note: 429 is documented in api.md; the OpenAPI does not enumerate rate-limit response
+    headers per operation.

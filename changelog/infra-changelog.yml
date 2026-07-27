@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/infrahq/infra/releases
+scheme: semver
+current_version: v0.21.0
+note: Dated release notes on GitHub. Project is dormant; v0.21.0 is the final release.
+  Dates transcribed from the GitHub releases page.
+entries:
+- version: v0.21.0
+  date: '2024-01-25'
+  breaking: true
+  highlights:
+  - Server no longer accepts `providers` or `grants` in configuration; manage them
+    via the Terraform provider instead.
+- version: v0.20.0
+  date: '2023-12-14'
+  breaking: false
+  highlights:
+  - Dashboard access-key management for automating tasks like Kubernetes cluster connections.
+- version: v0.19.0
+  date: '2023-11-30'
+  breaking: false
+  highlights:
+  - '`infra login` uses browser-based authentication by default, with headless login
+    support.'
+- version: v0.18.1
+  date: '2023-11-23'
+  breaking: false
+  highlights:
+  - Bug fixes (login page formatting, access-key expiry defaults). This is the API
+    version documented in api.md (Infra-Version 0.18.1).
+- version: v0.18.0
+  date: '2023-11-22'
+  breaking: false
+  highlights:
+  - Access keys can be generated in the dashboard for CI/CD and API use cases.
+- version: v0.17.1
+  date: '2023-11-11'
+  breaking: false
+  highlights:
+  - Fixed loading spinner issues and rare server startup failures.

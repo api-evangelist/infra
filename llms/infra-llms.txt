@@ -1,0 +1,26 @@
+# Infra
+
+> Infra is open-source authentication and access management for infrastructure — it grants short-lived, identity-based access to Kubernetes clusters, servers, and databases through OIDC identity providers. The hosted service (api.infrahq.com) has wound down; the source remains available under Elastic License 2.0 (core) and MIT (SDK + connectors). Final release: v0.21.0.
+
+## APIs
+
+- [Infra API](https://github.com/infrahq/infra/blob/main/docs/reference/api.md): Manage users, groups, grants, destinations, identity providers, and access keys. Base URL https://api.infrahq.com. Auth: `Authorization: Bearer <access key>` + `Infra-Version` header.
+
+## Specs
+
+- [OpenAPI 3.0](https://raw.githubusercontent.com/infrahq/infra/main/docs/api/openapi3.json): 27 paths, 47 operations.
+
+## Docs
+
+- [Introduction](https://github.com/infrahq/infra/blob/main/docs/introduction.md)
+- [Quickstart](https://github.com/infrahq/infra/blob/main/docs/quickstart.md)
+- [API reference](https://github.com/infrahq/infra/blob/main/docs/reference/api.md)
+- [CLI reference](https://github.com/infrahq/infra/blob/main/docs/reference/cli.md)
+- [Security reference](https://github.com/infrahq/infra/blob/main/docs/reference/security.md)
+- [Deploy](https://github.com/infrahq/infra/blob/main/docs/deploy.md)
+
+## Repo
+
+- [GitHub: infrahq/infra](https://github.com/infrahq/infra)
+- [Go client (pkg.go.dev)](https://pkg.go.dev/github.com/infrahq/infra/api)
+- [Releases / changelog](https://github.com/infrahq/infra/releases)

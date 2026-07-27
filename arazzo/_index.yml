@@ -1,0 +1,12 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/infra-openapi-original.json
+workflows:
+- file: infra-onboard-and-grant.yml
+  workflowId: onboardAndGrant
+  title: Onboard a user and grant destination access
+  summary: Create a user, add them to a group, and grant the group a privilege on a destination.
+- file: infra-issue-access-key.yml
+  workflowId: createUserAndIssueKey
+  title: Create a user and issue an access key
+  summary: Create an identity for automation and issue an access key for CI/CD or API calls.

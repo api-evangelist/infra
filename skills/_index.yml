@@ -1,0 +1,16 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/infra-openapi-original.json
+skills:
+- file: infra-grant-access.md
+  name: Grant a user or group access to a destination
+  api: openapi/infra-openapi-original.json
+  operations: [ListDestinations, ListGrants, CreateGrant, DeleteGrant]
+- file: infra-manage-access-keys.md
+  name: Issue and manage Infra access keys
+  api: openapi/infra-openapi-original.json
+  operations: [CreateAccessKey, ListAccessKeys, DeleteAccessKey, DeleteAccessKeys]
+- file: infra-onboard-identity.md
+  name: Onboard a user and place them in a group with access
+  api: openapi/infra-openapi-original.json
+  operations: [CreateUser, ListGroups, CreateGroup, UpdateUsersInGroup, CreateGrant]

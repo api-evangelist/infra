@@ -1,0 +1,39 @@
+arazzo: 1.0.1
+info:
+  title: Create a user and issue an access key
+  version: 1.0.0
+  summary: Create an identity for automation and issue an access key it can use for CI/CD or API calls.
+sourceDescriptions:
+- name: infra
+  url: ../openapi/infra-openapi-original.json
+  type: openapi
+workflows:
+- workflowId: createUserAndIssueKey
+  summary: Create a user, then issue an access key on that user's behalf.
+  inputs:
+    type: object
+    properties:
+      userName: { type: string }
+      keyName: { type: string }
+  steps:
+  - stepId: createUser
+    operationId: CreateUser
+    requestBody:
+      contentType: application/json
+      payload:
+        name: $inputs.userName
+    outputs:
+      userId: $response.body#/id
+  - stepId: createKey
+    operationId: CreateAccessKey
+    requestBody:
+      contentType: application/json
+      payload:
+        name: $inputs.keyName
+        issuedForID: $steps.createUser.outputs.userId
+    outputs:
+      accessKey: $response.body#/accessKey
+      keyId: $response.body#/id
+  outputs:
+    accessKey: $steps.createKey.outputs.accessKey
+    keyId: $steps.createKey.outputs.keyId

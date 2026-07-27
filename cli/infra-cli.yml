@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/infrahq/infra/blob/main/docs/reference/cli.md
+binary: infra
+license: Elastic License 2.0
+install:
+- method: github-releases
+  url: https://github.com/infrahq/infra/releases
+  note: Prebuilt binaries for macOS/Linux/Windows.
+- method: go
+  command: go install github.com/infrahq/infra@latest
+commands:
+- name: login
+  description: Authenticate to an Infra server (browser-based or headless).
+- name: logout
+  description: Disconnect from Infra.
+- name: list
+  description: List destinations you can access.
+- name: use
+  description: Access a specific destination (e.g. switch kubeconfig context).
+- name: info
+  description: Display information about the current session.
+- name: about
+  description: Display information about Infra.
+- name: version
+  description: Show the installed CLI version.
+- name: completion
+  description: Generate shell autocompletion (bash, zsh, fish, powershell).
+resource_groups:
+- name: destinations
+  subcommands: [list, remove]
+  description: Manage connected infrastructure endpoints (clusters, servers, databases).
+- name: grants
+  subcommands: [list, add, remove]
+  description: Control user/group access permissions.
+- name: users
+  subcommands: [add, edit, list, remove]
+  description: Administer user identities.
+- name: groups
+  subcommands: [add, adduser, list, remove, removeuser]
+  description: Manage groups and membership.
+- name: keys
+  subcommands: [list, add, remove]
+  description: Manage access-key lifecycle.
+- name: providers
+  subcommands: [list, add, edit, remove]
+  description: Configure OIDC identity-provider integrations.

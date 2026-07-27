@@ -1,0 +1,40 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: openapi/infra-openapi-original.json
+note: No official Infra MCP server is published. This is a candidate tool list derived
+  from the OpenAPI operations so an MCP server could be forged; it is not a provider claim.
+server:
+  name: infra
+  transport: http
+tools:
+- name: list_grants
+  description: List access grants (who has what access to which destination)
+  source_operation: openapi/infra-openapi-original.json#ListGrants
+- name: create_grant
+  description: Grant a user or group access to a destination resource
+  source_operation: openapi/infra-openapi-original.json#CreateGrant
+- name: delete_grant
+  description: Revoke an access grant
+  source_operation: openapi/infra-openapi-original.json#DeleteGrant
+- name: list_destinations
+  description: List connected infrastructure destinations (clusters, servers, databases)
+  source_operation: openapi/infra-openapi-original.json#ListDestinations
+- name: list_users
+  description: List identities/users in the organization
+  source_operation: openapi/infra-openapi-original.json#ListUsers
+- name: create_user
+  description: Create a user identity
+  source_operation: openapi/infra-openapi-original.json#CreateUser
+- name: list_groups
+  description: List groups
+  source_operation: openapi/infra-openapi-original.json#ListGroups
+- name: list_access_keys
+  description: List access keys
+  source_operation: openapi/infra-openapi-original.json#ListAccessKeys
+- name: create_access_key
+  description: Create an access key for CI/CD or API use
+  source_operation: openapi/infra-openapi-original.json#CreateAccessKey
+- name: list_providers
+  description: List configured identity providers (OIDC)
+  source_operation: openapi/infra-openapi-original.json#ListProviders

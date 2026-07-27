@@ -1,0 +1,35 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Infra API
+  version: 1.0.0
+extends: openapi/infra-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-rating: 3
+    x-apievangelist-notes: Open-source infrastructure access management; hosted service
+      wound down (api.infrahq.com offline). Spec harvested from docs/api/openapi3.json.
+    description: >-
+      Infra API for authentication and access management to Kubernetes clusters,
+      servers, and databases. Grants short-lived, identity-based access via OIDC
+      providers. Authenticate with Authorization: Bearer <access key> and an
+      Infra-Version header. Elastic License 2.0.
+- target: $.servers
+  update:
+  - url: https://api.infrahq.com
+    description: 'Hosted control-plane base URL. The hosted service is no longer
+      reachable; self-host per the deployment docs.'
+- target: $.components
+  update:
+    securitySchemes:
+      accessKey:
+        type: http
+        scheme: bearer
+        description: Organization-scoped access key sent as a bearer token in the Authorization header.
+- target: $
+  update:
+    x-apievangelist-conventions:
+      pagination: page/limit; response page/limit/totalPages/totalCount
+      error_envelope: '{code,message,fieldErrors[]}'
+      idempotency: not supported
+      version_header: Infra-Version

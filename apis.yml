@@ -1,7 +1,17 @@
 aid: infra
 name: Infra
-description: Infra is a company surfaced as a portfolio company of 8vc and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Infra is open-source authentication and access management for infrastructure. It
+  grants short-lived, identity-based access to Kubernetes clusters, servers, and
+  databases by connecting an organization's OIDC identity providers (Okta, Google,
+  Azure AD, and others) to fine-grained grants on destination resources. Users and
+  groups receive least-privilege roles, access keys are issued for CI/CD and API
+  automation, and the `infra` CLI lets engineers list and switch into destinations.
+  The project was originally added to the API Evangelist network as an 8vc portfolio
+  lead; the hosted service at api.infrahq.com has since wound down (infrahq.com now
+  redirects to the GitHub repository), but the source, OpenAPI spec, CLI, and Go
+  client remain available under the Elastic License 2.0 (core) and MIT (SDK and
+  connectors). Final release: v0.21.0.
 url: https://raw.githubusercontent.com/api-evangelist/infra/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +19,130 @@ x-backed-by:
 - 8vc
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Identity
+- Access Management
+- Authentication
+- Authorization
+- Infrastructure
+- Kubernetes
+- OIDC
+- Security
+- Open Source
+image: https://avatars.githubusercontent.com/u/85984819
+apis:
+- aid: infra:infra-authentication-api
+  name: Infra Authentication API
+  description: The Authentication API from Infra — 9 operation(s) for authentication.
+  humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+  baseURL: https://api.infrahq.com
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/infra-authentication-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+- aid: infra:infra-destinations-api
+  name: Infra Destinations API
+  description: The Destinations API from Infra — 3 operation(s) for destinations.
+  humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+  baseURL: https://api.infrahq.com
+  tags:
+  - Destinations
+  properties:
+  - type: OpenAPI
+    url: openapi/infra-destinations-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+- aid: infra:infra-grants-api
+  name: Infra Grants API
+  description: The Grants API from Infra — 2 operation(s) for grants.
+  humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+  baseURL: https://api.infrahq.com
+  tags:
+  - Grants
+  properties:
+  - type: OpenAPI
+    url: openapi/infra-grants-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+- aid: infra:infra-groups-api
+  name: Infra Groups API
+  description: The Groups API from Infra — 3 operation(s) for groups.
+  humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+  baseURL: https://api.infrahq.com
+  tags:
+  - Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/infra-groups-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+- aid: infra:infra-organizations-api
+  name: Infra Organizations API
+  description: The Organizations API from Infra — 3 operation(s) for organizations.
+  humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+  baseURL: https://api.infrahq.com
+  tags:
+  - Organizations
+  properties:
+  - type: OpenAPI
+    url: openapi/infra-organizations-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+- aid: infra:infra-providers-api
+  name: Infra Providers API
+  description: The Providers API from Infra — 2 operation(s) for providers.
+  humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+  baseURL: https://api.infrahq.com
+  tags:
+  - Providers
+  properties:
+  - type: OpenAPI
+    url: openapi/infra-providers-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+- aid: infra:infra-settings-api
+  name: Infra Settings API
+  description: The Settings API from Infra — 2 operation(s) for settings.
+  humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+  baseURL: https://api.infrahq.com
+  tags:
+  - Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/infra-settings-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+- aid: infra:infra-users-api
+  name: Infra Users API
+  description: The Users API from Infra — 4 operation(s) for users.
+  humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+  baseURL: https://api.infrahq.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/infra-users-api-openapi.yml
+  - type: APIReference
+    url: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +151,54 @@ maintainers:
 common:
 - type: Website
   url: https://infrahq.com
+- type: Documentation
+  url: https://github.com/infrahq/infra/tree/main/docs
+- type: APIReference
+  url: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
+- type: GettingStarted
+  url: https://github.com/infrahq/infra/blob/main/docs/quickstart.md
+- type: GitHubOrganization
+  url: https://github.com/infrahq
+- type: SourceCode
+  url: https://github.com/infrahq/infra
+- type: OpenAPI
+  url: openapi/infra-openapi-original.json
+- type: Packages
+  url: packages/infra-packages.yml
+- type: SDKs
+  url: packages/infra-packages.yml
+- type: CLI
+  url: cli/infra-cli.yml
+- type: Authentication
+  url: authentication/infra-authentication.yml
+- type: Conventions
+  url: conventions/infra-conventions.yml
+- type: ErrorCatalog
+  url: errors/infra-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/infra-lifecycle.yml
+- type: ChangeLog
+  url: changelog/infra-changelog.yml
+- type: Conformance
+  url: conformance/infra-conformance.yml
+- type: DataModel
+  url: data-model/infra-data-model.yml
+- type: DomainSecurity
+  url: security/infra-domain-security.yml
+- type: Overlay
+  url: overlays/infra-openapi-overlay.yaml
+- type: LLMsTxt
+  url: llms/infra-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Arazzo
+  name: Onboard a user and grant destination access
+  url: arazzo/infra-onboard-and-grant.yml
+- type: Arazzo
+  name: Create a user and issue an access key
+  url: arazzo/infra-issue-access-key.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

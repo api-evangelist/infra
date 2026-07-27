@@ -1,0 +1,28 @@
+{
+  "provider": "infra",
+  "sources": [
+    "infra-authentication-api-openapi.yml",
+    "infra-destinations-api-openapi.yml",
+    "infra-grants-api-openapi.yml",
+    "infra-groups-api-openapi.yml",
+    "infra-organizations-api-openapi.yml",
+    "infra-providers-api-openapi.yml",
+    "infra-settings-api-openapi.yml",
+    "infra-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "infra-authentication-api-openapi.yml",
+    "infra-destinations-api-openapi.yml",
+    "infra-grants-api-openapi.yml",
+    "infra-groups-api-openapi.yml",
+    "infra-organizations-api-openapi.yml",
+    "infra-providers-api-openapi.yml",
+    "infra-settings-api-openapi.yml",
+    "infra-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
