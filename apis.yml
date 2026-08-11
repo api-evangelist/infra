@@ -149,6 +149,14 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: MCPServer
+  url: mcp/infra-mcp.yml
+- type: IssueTracker
+  url: https://github.com/infrahq/infra/issues
+- type: Releases
+  url: https://github.com/infrahq/infra/releases
+- type: ContributionGuide
+  url: https://github.com/infrahq/infra/blob/main/CONTRIBUTING.md
 - type: Website
   url: https://infrahq.com
 - type: Documentation
@@ -162,7 +170,7 @@ common:
 - type: SourceCode
   url: https://github.com/infrahq/infra
 - type: OpenAPI
-  url: openapi/infra-openapi-original.json
+  url: openapi/_original/infra-openapi-original.json
 - type: Packages
   url: packages/infra-packages.yml
 - type: SDKs
