@@ -1,0 +1,300 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Infra Authentication API",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListAccessKeys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.infrahq.com/api/access-keys",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query",
+                "description": "UserID of the user whose access keys you want to list"
+              },
+              {
+                "name": "name",
+                "value": "john@example.com",
+                "type": "query",
+                "description": "Name of the user"
+              },
+              {
+                "name": "showExpired",
+                "value": "true",
+                "type": "query",
+                "description": "Whether to show expired access keys. Defaults to false"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number to retrieve"
+              },
+              {
+                "name": "limit",
+                "value": "100",
+                "type": "query",
+                "description": "Number of objects to retrieve per page (up to 1000)"
+              }
+            ]
+          },
+          "docs": "ListAccessKeys"
+        },
+        {
+          "info": {
+            "name": "CreateAccessKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/access-keys",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "CreateAccessKey"
+        },
+        {
+          "info": {
+            "name": "DeleteAccessKeys",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.infrahq.com/api/access-keys",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "name",
+                "value": "cicdkey",
+                "type": "query",
+                "description": "Name of the access key to delete"
+              }
+            ]
+          },
+          "docs": "DeleteAccessKeys"
+        },
+        {
+          "info": {
+            "name": "DeleteAccessKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.infrahq.com/api/access-keys/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteAccessKey"
+        },
+        {
+          "info": {
+            "name": "StartDeviceFlow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/device",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "StartDeviceFlow"
+        },
+        {
+          "info": {
+            "name": "ApproveDeviceFlow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/device/approve",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "ApproveDeviceFlow"
+        },
+        {
+          "info": {
+            "name": "GetDeviceFlowStatus",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/device/status",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "GetDeviceFlowStatus"
+        },
+        {
+          "info": {
+            "name": "Login",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/login",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Login"
+        },
+        {
+          "info": {
+            "name": "Logout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/logout",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Logout"
+        },
+        {
+          "info": {
+            "name": "VerifiedPasswordReset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/password-reset",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "VerifiedPasswordReset"
+        },
+        {
+          "info": {
+            "name": "RequestPasswordReset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/password-reset-request",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "RequestPasswordReset"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

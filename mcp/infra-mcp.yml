@@ -2,8 +2,8 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: openapi/infra-openapi-original.json
-note: No official Infra MCP server is published. This is a candidate tool list derived
-  from the OpenAPI operations so an MCP server could be forged; it is not a provider claim.
+note: No official Infra MCP server is published. This is a candidate tool list derived from the OpenAPI
+  operations so an MCP server could be forged; it is not a provider claim.
 server:
   name: infra
   transport: http
@@ -38,3 +38,9 @@ tools:
 - name: list_providers
   description: List configured identity providers (OIDC)
   source_operation: openapi/infra-openapi-original.json#ListProviders
+deployment:
+  mode: none
+  verified: derived
+  tools: 10
+  checked: '2026-08-12'
+  source: catalog MCP census

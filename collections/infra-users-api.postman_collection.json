@@ -1,0 +1,3099 @@
+{
+  "item": [
+    {
+      "id": "6c0dcaac-0c57-4520-91e8-4fac51a52df1",
+      "name": "Users",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0aa19314-7653-4def-85ed-b7794cb96d2f",
+          "name": "UpdateUsersInGroup",
+          "request": {
+            "name": "UpdateUsersInGroup",
+            "description": {
+              "content": "UpdateUsersInGroup",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "groups",
+                ":id",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usersToAdd\": [\n    \"<uid>\",\n    \"<uid>\"\n  ],\n  \"usersToRemove\": [\n    \"<uid>\",\n    \"<uid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4816f257-838f-41ae-a9e9-73d0d94b2c74",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "groups",
+                    ":id",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"usersToAdd\": [\n    \"[6dYiUyYgKa,6hPY5vqB2R]\",\n    \"[6dYiUyYgKa,6hPY5vqB2R]\"\n  ],\n  \"usersToRemove\": [\n    \"[3w5qrK7ets,4Ajzyzckdn]\",\n    \"[3w5qrK7ets,4Ajzyzckdn]\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8295,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59e2a87a-5c20-4029-8903-993e75ff307c",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "groups",
+                    ":id",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"usersToAdd\": [\n    \"[6dYiUyYgKa,6hPY5vqB2R]\",\n    \"[6dYiUyYgKa,6hPY5vqB2R]\"\n  ],\n  \"usersToRemove\": [\n    \"[3w5qrK7ets,4Ajzyzckdn]\",\n    \"[3w5qrK7ets,4Ajzyzckdn]\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c42d016-7743-4982-9d0f-e602cdc15f4e",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "groups",
+                    ":id",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"usersToAdd\": [\n    \"[6dYiUyYgKa,6hPY5vqB2R]\",\n    \"[6dYiUyYgKa,6hPY5vqB2R]\"\n  ],\n  \"usersToRemove\": [\n    \"[3w5qrK7ets,4Ajzyzckdn]\",\n    \"[3w5qrK7ets,4Ajzyzckdn]\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7997e745-17fe-455a-9f86-987a44041d5f",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "groups",
+                    ":id",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"usersToAdd\": [\n    \"[6dYiUyYgKa,6hPY5vqB2R]\",\n    \"[6dYiUyYgKa,6hPY5vqB2R]\"\n  ],\n  \"usersToRemove\": [\n    \"[3w5qrK7ets,4Ajzyzckdn]\",\n    \"[3w5qrK7ets,4Ajzyzckdn]\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3a01c526-deb1-4eb6-8b89-167bb8e919e1",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "groups",
+                    ":id",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"usersToAdd\": [\n    \"[6dYiUyYgKa,6hPY5vqB2R]\",\n    \"[6dYiUyYgKa,6hPY5vqB2R]\"\n  ],\n  \"usersToRemove\": [\n    \"[3w5qrK7ets,4Ajzyzckdn]\",\n    \"[3w5qrK7ets,4Ajzyzckdn]\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1e7c699-a56e-4f35-847a-8c64af378e0f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "groups",
+                    ":id",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"usersToAdd\": [\n    \"[6dYiUyYgKa,6hPY5vqB2R]\",\n    \"[6dYiUyYgKa,6hPY5vqB2R]\"\n  ],\n  \"usersToRemove\": [\n    \"[3w5qrK7ets,4Ajzyzckdn]\",\n    \"[3w5qrK7ets,4Ajzyzckdn]\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f06da3f-55ab-42d2-b7c1-bb41904ac593",
+          "name": "ListUsers",
+          "request": {
+            "name": "ListUsers",
+            "description": {
+              "content": "ListUsers",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Name of the user"
+                },
+                {
+                  "disabled": false,
+                  "key": "group",
+                  "value": "<uid>",
+                  "description": "Group the user belongs to"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<uid>",
+                  "description": "List of User IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<uid>",
+                  "description": "List of User IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "showSystem",
+                  "value": "<boolean>",
+                  "description": "if true, this shows the connector and other internal users"
+                },
+                {
+                  "disabled": false,
+                  "key": "publicKeyFingerprint",
+                  "value": "<string>",
+                  "description": "Find the user with a public key that matches this SHA256 fingerprint."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<int>",
+                  "description": "Page number to retrieve"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<int>",
+                  "description": "Number of objects to retrieve per page (up to 1000)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eb6fcb0e-7723-4545-80c0-7ee5cd924542",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "bob@example.com"
+                    },
+                    {
+                      "key": "group",
+                      "value": "admins"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "publicKeyFingerprint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6f90c3b-2c3c-423b-bf44-141039e64a80",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "bob@example.com"
+                    },
+                    {
+                      "key": "group",
+                      "value": "admins"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "publicKeyFingerprint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "282fe23d-d196-4b20-b3e4-c7ca53b6bea7",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "bob@example.com"
+                    },
+                    {
+                      "key": "group",
+                      "value": "admins"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "publicKeyFingerprint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "48819962-e482-4507-a17c-0cacb5b8dbfe",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "bob@example.com"
+                    },
+                    {
+                      "key": "group",
+                      "value": "admins"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "publicKeyFingerprint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "df50d17d-322a-4b6a-ab91-a87c97ec593d",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "bob@example.com"
+                    },
+                    {
+                      "key": "group",
+                      "value": "admins"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "publicKeyFingerprint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bb31a558-45aa-45d7-8495-a4d0feae552d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "bob@example.com"
+                    },
+                    {
+                      "key": "group",
+                      "value": "admins"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "4yJ3n3D8E2"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "publicKeyFingerprint",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 7130,\n  \"items\": [\n    {\n      \"created\": \"2022-03-14T09:48:00Z\",\n      \"id\": \"4ACFkc434M\",\n      \"lastSeenAt\": \"2022-03-14T09:48:00Z\",\n      \"name\": \"bob@example.com\",\n      \"providerNames\": [\n        \"['okta']\",\n        \"['okta']\"\n      ],\n      \"publicKeys\": [\n        {\n          \"created\": \"2022-03-14T09:48:00Z\",\n          \"expires\": \"2022-03-14T09:48:00Z\",\n          \"fingerprint\": \"string\",\n          \"id\": \"4yJ3n3D8E2\",\n          \"keyType\": \"string\",\n          \"name\": \"string\",\n          \"publicKey\": \"string\"\n        },\n        {\n          \"created\": \"2022-03-14T09:48:00Z\",\n          \"expires\": \"2022-03-14T09:48:00Z\",\n          \"fingerprint\": \"string\",\n          \"id\": \"4yJ3n3D8E2\",\n          \"keyType\": \"string\",\n          \"name\": \"string\",\n          \"publicKey\": \"string\"\n        }\n      ],\n      \"sshLoginName\": \"bob\",\n      \"updated\": \"2022-03-14T09:48:00Z\"\n    },\n    {\n      \"created\": \"2022-03-14T09:48:00Z\",\n      \"id\": \"4ACFkc434M\",\n      \"lastSeenAt\": \"2022-03-14T09:48:00Z\",\n      \"name\": \"bob@example.com\",\n      \"providerNames\": [\n        \"['okta']\",\n        \"['okta']\"\n      ],\n      \"publicKeys\": [\n        {\n          \"created\": \"2022-03-14T09:48:00Z\",\n          \"expires\": \"2022-03-14T09:48:00Z\",\n          \"fingerprint\": \"string\",\n          \"id\": \"4yJ3n3D8E2\",\n          \"keyType\": \"string\",\n          \"name\": \"string\",\n          \"publicKey\": \"string\"\n        },\n        {\n          \"created\": \"2022-03-14T09:48:00Z\",\n          \"expires\": \"2022-03-14T09:48:00Z\",\n          \"fingerprint\": \"string\",\n          \"id\": \"4yJ3n3D8E2\",\n          \"keyType\": \"string\",\n          \"name\": \"string\",\n          \"publicKey\": \"string\"\n        }\n      ],\n      \"sshLoginName\": \"bob\",\n      \"updated\": \"2022-03-14T09:48:00Z\"\n    }\n  ],\n  \"limit\": 364,\n  \"page\": 4750,\n  \"totalCount\": 2741,\n  \"totalPages\": 4072\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8eea0023-f4f7-42f8-9610-bbd5e3ce74b6",
+          "name": "CreateUser",
+          "request": {
+            "name": "CreateUser",
+            "description": {
+              "content": "CreateUser",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<email>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4d47db56-182d-4153-bb2a-44d0d417be58",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"bob@example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "31e986cd-a67a-42b6-9b32-da838cf5d03c",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"bob@example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "077adc61-6ba0-43df-839c-57e15fb31ef2",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"bob@example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59634810-6a03-47d7-9d0d-8f0ab8618557",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"bob@example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eba5d5a3-4c5c-463c-82a0-c116006d0ef1",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"bob@example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "154e2b38-08d7-4332-bc85-c47b723092cf",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"bob@example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"4yJ3n3D8E2\",\n  \"name\": \"bob@example.com\",\n  \"oneTimePassword\": \"password\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "042c9a61-2b9f-4b86-a107-743395520c86",
+          "name": "AddUserPublicKey",
+          "request": {
+            "name": "AddUserPublicKey",
+            "description": {
+              "content": "AddUserPublicKey",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "users",
+                "public-key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"publicKey\": \"<string>\",\n  \"name\": \"<[a-zA-Z0-9\\\\-_.]>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0931b1b2-5939-4b84-a9af-3450be4da5f5",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    "public-key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"publicKey\": \"<string>\",\n  \"name\": \"<[a-zA-Z0-9\\\\-_.]>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c1228c4-9a2b-4538-917a-63f6f246c30b",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    "public-key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"publicKey\": \"<string>\",\n  \"name\": \"<[a-zA-Z0-9\\\\-_.]>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "731bb802-ebb3-430a-a876-7638e9bb9451",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    "public-key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"publicKey\": \"<string>\",\n  \"name\": \"<[a-zA-Z0-9\\\\-_.]>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "970fe82d-94a0-4248-a3a8-f99ecc5c5b2c",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    "public-key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"publicKey\": \"<string>\",\n  \"name\": \"<[a-zA-Z0-9\\\\-_.]>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "90e9aabb-79a7-4a2a-ab8c-5c586d8951b8",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    "public-key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"publicKey\": \"<string>\",\n  \"name\": \"<[a-zA-Z0-9\\\\-_.]>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6071e821-5ba0-4d0c-bf20-ced5ed14a08f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    "public-key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"publicKey\": \"<string>\",\n  \"name\": \"<[a-zA-Z0-9\\\\-_.]>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": \"2022-03-14T09:48:00Z\",\n  \"expires\": \"2022-03-14T09:48:00Z\",\n  \"fingerprint\": \"string\",\n  \"id\": \"4yJ3n3D8E2\",\n  \"keyType\": \"string\",\n  \"name\": \"string\",\n  \"publicKey\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31d6229a-c0f4-4f20-8194-72a14ba94305",
+          "name": "DeleteUser",
+          "request": {
+            "name": "DeleteUser",
+            "description": {
+              "content": "DeleteUser",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "690586e0-7871-46e4-ae52-d558d7b64bee",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa2cf19d-d968-48cd-b3f7-dd9de854bc25",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "454440bb-9f60-4c6f-af84-9276ae34f2f2",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fbbdc2ae-a56a-4b7d-adb5-05ac3c6f263a",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "991b1620-c774-45d9-bfbc-b478821c2eb1",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0fb76dc-8ad5-4057-8ca8-0cbb78306f6b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79c90f45-aebb-4004-9f8d-7de38900909d",
+          "name": "GetUser",
+          "request": {
+            "name": "GetUser",
+            "description": {
+              "content": "GetUser",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uid|self>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ab6a1d87-82e8-48d7-b916-99086e1a8513",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid|self>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09847ece-3402-4c3c-a793-4bfaca0019c7",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid|self>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "51a3b151-8285-49e6-8b51-88b4f097c423",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid|self>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8d9f83ea-09cf-4c93-90bc-a0f1d95cf3d5",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid|self>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b461af43-da8a-4596-b099-bdb43a5e0819",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid|self>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0de3abd1-0bc2-49e3-8981-4d12a875b4bc",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid|self>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": \"2022-03-14T09:48:00Z\",\n  \"id\": \"4ACFkc434M\",\n  \"lastSeenAt\": \"2022-03-14T09:48:00Z\",\n  \"name\": \"bob@example.com\",\n  \"providerNames\": [\n    \"['okta']\",\n    \"['okta']\"\n  ],\n  \"publicKeys\": [\n    {\n      \"created\": \"2022-03-14T09:48:00Z\",\n      \"expires\": \"2022-03-14T09:48:00Z\",\n      \"fingerprint\": \"string\",\n      \"id\": \"4yJ3n3D8E2\",\n      \"keyType\": \"string\",\n      \"name\": \"string\",\n      \"publicKey\": \"string\"\n    },\n    {\n      \"created\": \"2022-03-14T09:48:00Z\",\n      \"expires\": \"2022-03-14T09:48:00Z\",\n      \"fingerprint\": \"string\",\n      \"id\": \"4yJ3n3D8E2\",\n      \"keyType\": \"string\",\n      \"name\": \"string\",\n      \"publicKey\": \"string\"\n    }\n  ],\n  \"sshLoginName\": \"bob\",\n  \"updated\": \"2022-03-14T09:48:00Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6cb3561a-c07f-407b-9c24-156012e1698c",
+          "name": "UpdateUser",
+          "request": {
+            "name": "UpdateUser",
+            "description": {
+              "content": "UpdateUser",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"oldPassword\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c3236bca-8e24-4a35-9e32-801e4955f619",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"oldPassword\": \"oldpassword\",\n  \"password\": \"newpassword\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "351d0988-328a-481c-a321-7117f96500b9",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"oldPassword\": \"oldpassword\",\n  \"password\": \"newpassword\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4dfb63bc-81ae-4453-9846-eec244b05483",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"oldPassword\": \"oldpassword\",\n  \"password\": \"newpassword\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ab4371fd-b23b-4337-81df-ebc51f821794",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"oldPassword\": \"oldpassword\",\n  \"password\": \"newpassword\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d80e9116-4af3-4657-a5cc-655a83d60936",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"oldPassword\": \"oldpassword\",\n  \"password\": \"newpassword\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4099,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "878e0590-688d-4c28-8226-a1115d27488b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"oldPassword\": \"oldpassword\",\n  \"password\": \"newpassword\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": \"2022-03-14T09:48:00Z\",\n  \"id\": \"4ACFkc434M\",\n  \"lastSeenAt\": \"2022-03-14T09:48:00Z\",\n  \"name\": \"bob@example.com\",\n  \"oneTimePassword\": \"string\",\n  \"providerNames\": [\n    \"['okta']\",\n    \"['okta']\"\n  ],\n  \"publicKeys\": [\n    {\n      \"created\": \"2022-03-14T09:48:00Z\",\n      \"expires\": \"2022-03-14T09:48:00Z\",\n      \"fingerprint\": \"string\",\n      \"id\": \"4yJ3n3D8E2\",\n      \"keyType\": \"string\",\n      \"name\": \"string\",\n      \"publicKey\": \"string\"\n    },\n    {\n      \"created\": \"2022-03-14T09:48:00Z\",\n      \"expires\": \"2022-03-14T09:48:00Z\",\n      \"fingerprint\": \"string\",\n      \"id\": \"4yJ3n3D8E2\",\n      \"keyType\": \"string\",\n      \"name\": \"string\",\n      \"publicKey\": \"string\"\n    }\n  ],\n  \"sshLoginName\": \"bob\",\n  \"updated\": \"2022-03-14T09:48:00Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.infrahq.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8f89e12e-5c27-4a18-b5ae-9d730999506c",
+    "name": "Infra Authentication Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Infra API",
+      "type": "text/plain"
+    }
+  }
+}

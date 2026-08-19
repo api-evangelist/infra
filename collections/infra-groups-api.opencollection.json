@@ -1,0 +1,178 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Infra Authentication Groups API",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListGroups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.infrahq.com/api/groups",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "name",
+                "value": "admins",
+                "type": "query",
+                "description": "Name of the group to retrieve"
+              },
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query",
+                "description": "UserID of a user who is a member of the group"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number to retrieve"
+              },
+              {
+                "name": "limit",
+                "value": "100",
+                "type": "query",
+                "description": "Number of objects to retrieve per page (up to 1000)"
+              }
+            ]
+          },
+          "docs": "ListGroups"
+        },
+        {
+          "info": {
+            "name": "CreateGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/groups",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "CreateGroup"
+        },
+        {
+          "info": {
+            "name": "GetGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.infrahq.com/api/groups/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetGroup"
+        },
+        {
+          "info": {
+            "name": "DeleteGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.infrahq.com/api/groups/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteGroup"
+        },
+        {
+          "info": {
+            "name": "UpdateUsersInGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.infrahq.com/api/groups/:id/users",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "UpdateUsersInGroup"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

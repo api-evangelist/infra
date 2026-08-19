@@ -1,0 +1,2472 @@
+{
+  "item": [
+    {
+      "id": "c6524b52-4f48-4293-8751-fc6444ded3ff",
+      "name": "Providers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "80e990f9-88b3-41fb-a365-924412459981",
+          "name": "ListProviders",
+          "request": {
+            "name": "ListProviders",
+            "description": {
+              "content": "ListProviders",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "providers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Name of the provider"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<int>",
+                  "description": "Page number to retrieve"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<int>",
+                  "description": "Number of objects to retrieve per page (up to 1000)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4b4e05f2-1a65-47e1-b253-0e498ef8a85b",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "okta"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 553,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8448dd98-6138-4ff9-9026-bf76dabd36d3",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "okta"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9506dd2f-3de3-4543-97cd-b3f145adba66",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "okta"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "611d85ea-53d0-4183-a0f3-62be821b4bc4",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "okta"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "80c4db2a-e362-42e6-a3ef-b7fdbed93961",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "okta"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "55c527fd-b6f9-46ec-97f2-1189f56aecfc",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "okta"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 739,\n  \"items\": [\n    {\n      \"authURL\": \"https://example.com/oauth2/v1/authorize\",\n      \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n      \"created\": \"2022-03-14T09:48:00Z\",\n      \"id\": \"4yJ3n3D8E2\",\n      \"kind\": \"oidc\",\n      \"name\": \"okta\",\n      \"scopes\": [\n        \"['openid', 'email']\",\n        \"['openid', 'email']\"\n      ],\n      \"updated\": \"2022-03-14T09:48:00Z\",\n      \"url\": \"infrahq.okta.com\"\n    },\n    {\n      \"authURL\": \"https://example.com/oauth2/v1/authorize\",\n      \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n      \"created\": \"2022-03-14T09:48:00Z\",\n      \"id\": \"4yJ3n3D8E2\",\n      \"kind\": \"oidc\",\n      \"name\": \"okta\",\n      \"scopes\": [\n        \"['openid', 'email']\",\n        \"['openid', 'email']\"\n      ],\n      \"updated\": \"2022-03-14T09:48:00Z\",\n      \"url\": \"infrahq.okta.com\"\n    }\n  ],\n  \"limit\": 8423,\n  \"page\": 6540,\n  \"totalCount\": 9845,\n  \"totalPages\": 1854\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0260cce-0f6d-4fc8-a2c7-02e48650ea1f",
+          "name": "CreateProvider",
+          "request": {
+            "name": "CreateProvider",
+            "description": {
+              "content": "CreateProvider",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "providers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"<string>\",\n  \"clientID\": \"<string>\",\n  \"clientSecret\": \"<string>\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"<string>\"\n  },\n  \"kind\": \"<string>\",\n  \"name\": \"<[a-zA-Z0-9\\\\-_.]>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d16a6508-b676-4f43-815c-d508d76a027d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd311ea7-4663-424a-9caf-169afcc3671b",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0998d62-567a-4ceb-a8ee-e7adfa9e291d",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e0b28f99-ad68-455d-a6bd-abbe8ee1c685",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d6b092c9-389d-446b-9df1-09fcbdc2f2a7",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad207abe-49a4-4d38-ac56-cfe2944b8ad5",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"authURL\": \"https://example.com/oauth2/v1/authorize\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"created\": \"2022-03-14T09:48:00Z\",\n  \"id\": \"4yJ3n3D8E2\",\n  \"kind\": \"oidc\",\n  \"name\": \"okta\",\n  \"scopes\": [\n    \"['openid', 'email']\",\n    \"['openid', 'email']\"\n  ],\n  \"updated\": \"2022-03-14T09:48:00Z\",\n  \"url\": \"infrahq.okta.com\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2436ee4-a182-46fc-90f6-11084357029b",
+          "name": "DeleteProvider",
+          "request": {
+            "name": "DeleteProvider",
+            "description": {
+              "content": "DeleteProvider",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "providers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0cd475c5-2a62-4d7e-96f3-fc4f7091390e",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "52571454-3a9c-4fc5-b790-1212c8d72edf",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1610b6dc-29f5-4c3b-ae04-a22a0285bc35",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "696325bd-6fda-483f-9460-1384c2fa69ec",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0232f585-dda4-4551-9254-b4bc699af024",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ed3fc26-19b3-42fc-9b81-1fa9563d1656",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "edb375e1-5c6d-4725-b31e-a72c6cd15e80",
+          "name": "GetProvider",
+          "request": {
+            "name": "GetProvider",
+            "description": {
+              "content": "GetProvider",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "providers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "31f5c312-f529-4a53-910f-4489776c7844",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "93e38dec-ff47-4a53-afa3-a6638eae8673",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0330d9bf-b59c-4b15-b725-85657893f039",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "facd5472-c36a-43fe-a4c4-7cdb4b277e1e",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b48c6b1-f9f5-4bca-9e20-61dfac4e961b",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a509636-12bf-4785-8f80-0587c5e4f008",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"authURL\": \"https://example.com/oauth2/v1/authorize\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"created\": \"2022-03-14T09:48:00Z\",\n  \"id\": \"4yJ3n3D8E2\",\n  \"kind\": \"oidc\",\n  \"name\": \"okta\",\n  \"scopes\": [\n    \"['openid', 'email']\",\n    \"['openid', 'email']\"\n  ],\n  \"updated\": \"2022-03-14T09:48:00Z\",\n  \"url\": \"infrahq.okta.com\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7615f2b-8acb-44fd-89f0-4a3bd67750da",
+          "name": "PatchProvider",
+          "request": {
+            "name": "PatchProvider",
+            "description": {
+              "content": "PatchProvider",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "providers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clientSecret\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3577a6db-1c4c-4eaa-998d-ee8b51022a29",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1288b71d-ff5a-427e-b7ba-3bf2ed4427d3",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b51e86ed-f204-4055-aff5-6696f0349d90",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88d21b21-1ec2-40bc-99f5-aaab107b2411",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e805f25f-dbdd-41d7-b7e8-f3c2b1b33ddb",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc24a6a4-430d-4f2d-b5e0-a8a887a3e909",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"name\": \"okta\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"authURL\": \"https://example.com/oauth2/v1/authorize\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"created\": \"2022-03-14T09:48:00Z\",\n  \"id\": \"4yJ3n3D8E2\",\n  \"kind\": \"oidc\",\n  \"name\": \"okta\",\n  \"scopes\": [\n    \"['openid', 'email']\",\n    \"['openid', 'email']\"\n  ],\n  \"updated\": \"2022-03-14T09:48:00Z\",\n  \"url\": \"infrahq.okta.com\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7aac26db-a18b-4520-8238-c0cce0e482e9",
+          "name": "UpdateProvider",
+          "request": {
+            "name": "UpdateProvider",
+            "description": {
+              "content": "UpdateProvider",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "providers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<[a-zA-Z0-9\\\\-_.]>\",\n  \"url\": \"<string>\",\n  \"clientID\": \"<string>\",\n  \"clientSecret\": \"<string>\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"<string>\"\n  },\n  \"kind\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5fc73071-00b9-4cbe-bba4-2fbfbcc50dab",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"okta\",\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc3e9c61-023b-4d6b-91d0-4bad2b1c4aa3",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"okta\",\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "afc3fc21-fc59-4b73-ae3b-0f459b9ebd42",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"okta\",\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9d754423-8dfa-409c-844d-5b2281e841ff",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"okta\",\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c23f435e-c4e8-4d1c-85f9-479fe5b375de",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"okta\",\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7301,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2f52af82-197d-41a7-b606-a6beeb57f30d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "providers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"okta\",\n  \"url\": \"infrahq.okta.com\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"clientSecret\": \"jmda5eG93ax3jMDxTGrbHd_TBGT6kgNZtrCugLbU\",\n  \"api\": {\n    \"clientEmail\": \"<email>\",\n    \"domainAdminEmail\": \"<email>\",\n    \"privateKey\": \"-----BEGIN PRIVATE KEY-----\\nMIIDNTCCAh2gAwIBAgIRALRetnpcTo9O3V2fAK3ix+c\\n-----END PRIVATE KEY-----\\n\"\n  },\n  \"kind\": \"oidc\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"authURL\": \"https://example.com/oauth2/v1/authorize\",\n  \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n  \"created\": \"2022-03-14T09:48:00Z\",\n  \"id\": \"4yJ3n3D8E2\",\n  \"kind\": \"oidc\",\n  \"name\": \"okta\",\n  \"scopes\": [\n    \"['openid', 'email']\",\n    \"['openid', 'email']\"\n  ],\n  \"updated\": \"2022-03-14T09:48:00Z\",\n  \"url\": \"infrahq.okta.com\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.infrahq.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "239f1f17-8a28-4188-a9b6-e067cfd9c234",
+    "name": "Infra Authentication Providers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Infra API",
+      "type": "text/plain"
+    }
+  }
+}

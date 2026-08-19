@@ -1,0 +1,207 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Infra Authentication Grants API",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Grants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListGrants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.infrahq.com/api/grants",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "user",
+                "value": "6TjWTAgYYu",
+                "type": "query",
+                "description": "ID of user granted access"
+              },
+              {
+                "name": "group",
+                "value": "6k3Eqcqu6B",
+                "type": "query",
+                "description": "ID of group granted access"
+              },
+              {
+                "name": "resource",
+                "value": "production.namespace",
+                "type": "query",
+                "description": "a resource name"
+              },
+              {
+                "name": "destination",
+                "value": "production",
+                "type": "query",
+                "description": "name of the destination where a connector is installed"
+              },
+              {
+                "name": "privilege",
+                "value": "view",
+                "type": "query",
+                "description": "a role or permission"
+              },
+              {
+                "name": "showInherited",
+                "value": "true",
+                "type": "query",
+                "description": "if true, this field includes grants that the user inherits through groups"
+              },
+              {
+                "name": "showSystem",
+                "value": "false",
+                "type": "query",
+                "description": "if true, this shows the connector and other internal grants"
+              },
+              {
+                "name": "lastUpdateIndex",
+                "value": "",
+                "type": "query",
+                "description": "set this to the value of the Last-Update-Index response header to block until the list results have changed"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number to retrieve"
+              },
+              {
+                "name": "limit",
+                "value": "100",
+                "type": "query",
+                "description": "Number of objects to retrieve per page (up to 1000)"
+              }
+            ]
+          },
+          "docs": "ListGrants"
+        },
+        {
+          "info": {
+            "name": "CreateGrant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/grants",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "CreateGrant"
+        },
+        {
+          "info": {
+            "name": "UpdateGrants",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.infrahq.com/api/grants",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "UpdateGrants"
+        },
+        {
+          "info": {
+            "name": "GetGrant",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.infrahq.com/api/grants/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetGrant"
+        },
+        {
+          "info": {
+            "name": "DeleteGrant",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.infrahq.com/api/grants/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteGrant"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

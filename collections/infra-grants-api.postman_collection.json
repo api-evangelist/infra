@@ -1,0 +1,2237 @@
+{
+  "item": [
+    {
+      "id": "6b6a690e-ff39-42f3-9807-876b1a26ee44",
+      "name": "Grants",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "df7912b8-f7f6-4e07-ae0e-202d91de6554",
+          "name": "ListGrants",
+          "request": {
+            "name": "ListGrants",
+            "description": {
+              "content": "ListGrants",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "grants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<uid>",
+                  "description": "ID of user granted access"
+                },
+                {
+                  "disabled": false,
+                  "key": "group",
+                  "value": "<uid>",
+                  "description": "ID of group granted access"
+                },
+                {
+                  "disabled": false,
+                  "key": "resource",
+                  "value": "<string>",
+                  "description": "a resource name"
+                },
+                {
+                  "disabled": false,
+                  "key": "destination",
+                  "value": "<[a-zA-Z0-9\\-_]>",
+                  "description": "name of the destination where a connector is installed"
+                },
+                {
+                  "disabled": false,
+                  "key": "privilege",
+                  "value": "<string>",
+                  "description": "a role or permission"
+                },
+                {
+                  "disabled": false,
+                  "key": "showInherited",
+                  "value": "<boolean>",
+                  "description": "if true, this field includes grants that the user inherits through groups"
+                },
+                {
+                  "disabled": false,
+                  "key": "showSystem",
+                  "value": "<boolean>",
+                  "description": "if true, this shows the connector and other internal grants"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastUpdateIndex",
+                  "value": "<long>",
+                  "description": "set this to the value of the Last-Update-Index response header to block until the list results have changed"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<int>",
+                  "description": "Page number to retrieve"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<int>",
+                  "description": "Number of objects to retrieve per page (up to 1000)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e798306-9a80-4dd3-a404-a50c48e4a189",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "6TjWTAgYYu"
+                    },
+                    {
+                      "key": "group",
+                      "value": "6k3Eqcqu6B"
+                    },
+                    {
+                      "key": "resource",
+                      "value": "production.namespace"
+                    },
+                    {
+                      "key": "destination",
+                      "value": "production"
+                    },
+                    {
+                      "key": "privilege",
+                      "value": "view"
+                    },
+                    {
+                      "key": "showInherited",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lastUpdateIndex",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 9539,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "56b3ef40-e82b-46f9-97c4-23c09581d42a",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "6TjWTAgYYu"
+                    },
+                    {
+                      "key": "group",
+                      "value": "6k3Eqcqu6B"
+                    },
+                    {
+                      "key": "resource",
+                      "value": "production.namespace"
+                    },
+                    {
+                      "key": "destination",
+                      "value": "production"
+                    },
+                    {
+                      "key": "privilege",
+                      "value": "view"
+                    },
+                    {
+                      "key": "showInherited",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lastUpdateIndex",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e12e1598-81b0-4a05-8aac-979f20ce4073",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "6TjWTAgYYu"
+                    },
+                    {
+                      "key": "group",
+                      "value": "6k3Eqcqu6B"
+                    },
+                    {
+                      "key": "resource",
+                      "value": "production.namespace"
+                    },
+                    {
+                      "key": "destination",
+                      "value": "production"
+                    },
+                    {
+                      "key": "privilege",
+                      "value": "view"
+                    },
+                    {
+                      "key": "showInherited",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lastUpdateIndex",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "495d2758-b2a3-4c4e-82fe-e1af419499cd",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "6TjWTAgYYu"
+                    },
+                    {
+                      "key": "group",
+                      "value": "6k3Eqcqu6B"
+                    },
+                    {
+                      "key": "resource",
+                      "value": "production.namespace"
+                    },
+                    {
+                      "key": "destination",
+                      "value": "production"
+                    },
+                    {
+                      "key": "privilege",
+                      "value": "view"
+                    },
+                    {
+                      "key": "showInherited",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lastUpdateIndex",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f83f2083-ad57-427e-81dd-4f164909185a",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "6TjWTAgYYu"
+                    },
+                    {
+                      "key": "group",
+                      "value": "6k3Eqcqu6B"
+                    },
+                    {
+                      "key": "resource",
+                      "value": "production.namespace"
+                    },
+                    {
+                      "key": "destination",
+                      "value": "production"
+                    },
+                    {
+                      "key": "privilege",
+                      "value": "view"
+                    },
+                    {
+                      "key": "showInherited",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lastUpdateIndex",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5c3c84e-7854-42b8-8f48-6d2205e4254f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "6TjWTAgYYu"
+                    },
+                    {
+                      "key": "group",
+                      "value": "6k3Eqcqu6B"
+                    },
+                    {
+                      "key": "resource",
+                      "value": "production.namespace"
+                    },
+                    {
+                      "key": "destination",
+                      "value": "production"
+                    },
+                    {
+                      "key": "privilege",
+                      "value": "view"
+                    },
+                    {
+                      "key": "showInherited",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showSystem",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lastUpdateIndex",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<int>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<int>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 982,\n  \"items\": [\n    {\n      \"created\": \"2022-03-14T09:48:00Z\",\n      \"createdBy\": \"4yJ3n3D8E2\",\n      \"group\": \"3zMaadcd2U\",\n      \"id\": \"3w9XyTrkzk\",\n      \"privilege\": \"admin\",\n      \"resource\": \"production.namespace\",\n      \"updated\": \"2022-03-14T09:48:00Z\",\n      \"user\": \"6hNnjfjVcc\"\n    },\n    {\n      \"created\": \"2022-03-14T09:48:00Z\",\n      \"createdBy\": \"4yJ3n3D8E2\",\n      \"group\": \"3zMaadcd2U\",\n      \"id\": \"3w9XyTrkzk\",\n      \"privilege\": \"admin\",\n      \"resource\": \"production.namespace\",\n      \"updated\": \"2022-03-14T09:48:00Z\",\n      \"user\": \"6hNnjfjVcc\"\n    }\n  ],\n  \"limit\": 1983,\n  \"page\": 5423,\n  \"totalCount\": 9170,\n  \"totalPages\": 7121\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c67110d7-0e73-410c-9162-47b260ed7d65",
+          "name": "UpdateGrants",
+          "request": {
+            "name": "UpdateGrants",
+            "description": {
+              "content": "UpdateGrants",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "grants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "427b438a-126c-470f-a25e-ea4736454cea",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eba9cf63-39f4-4750-805f-20216291525e",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4d41b8f4-e3ab-4ac5-89c2-5db9cb00664c",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a2a9f3cc-65fd-492a-9daf-1b27f7e18a01",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ecdf6df1-edc1-410c-9afb-204fa2004e00",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "25f17816-4701-45b0-9dd2-9e9a0afb610d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c15aa5a2-3663-49a0-b1e0-1fe2c802a25c",
+          "name": "CreateGrant",
+          "request": {
+            "name": "CreateGrant",
+            "description": {
+              "content": "CreateGrant",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "grants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5bae316b-9c45-4aae-8279-780428dc14ff",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1b33958c-fa12-443c-9303-601d286fa4b9",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6041d7e2-1ebc-4628-bde8-14ab080874cd",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70d1602a-79bc-4462-8586-c3bec5860dce",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd4364eb-b3c0-4137-bf4b-a8272ca1eeff",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5d8513a3-03af-448c-914f-8b843a309144",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": \"2022-03-14T09:48:00Z\",\n  \"createdBy\": \"4yJ3n3D8E2\",\n  \"group\": \"3zMaadcd2U\",\n  \"id\": \"3w9XyTrkzk\",\n  \"privilege\": \"admin\",\n  \"resource\": \"production.namespace\",\n  \"updated\": \"2022-03-14T09:48:00Z\",\n  \"user\": \"6hNnjfjVcc\",\n  \"wasCreated\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3259113-91fa-4be2-a3eb-7742d5d32196",
+          "name": "DeleteGrant",
+          "request": {
+            "name": "DeleteGrant",
+            "description": {
+              "content": "DeleteGrant",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "grants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dd5e2509-c51d-4a79-a45a-dea9e5f8d705",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06b2eda2-edb5-4522-9ae8-aa44ca8622bb",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e59bd23-10b8-423a-a0d4-e4023b172c06",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a5099b43-7ac9-4f62-ad01-8d15adb34e43",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a6cbd2d1-e65f-41c1-98eb-f04e86709112",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4fc26c4b-1a06-4290-bada-58c4d9c21e17",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "742af944-2efd-4782-bd50-7d0fcbd1e940",
+          "name": "GetGrant",
+          "request": {
+            "name": "GetGrant",
+            "description": {
+              "content": "GetGrant",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "grants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0133d2b7-662c-42b3-9809-bb859df214c5",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ca1a6891-14b2-41e8-baf4-5595102dadf4",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "933570de-11bd-4b1f-bb87-619e0f6fa6c6",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eed84c63-aeee-4875-92c0-4cee250ef565",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0031e36a-0289-4316-860f-42c47902dd4b",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 4045,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e026f38-b6c5-4a59-9d5d-80fd16b99514",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "grants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Authorization",
+                    "value": "Bearer ACCESSKEY"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": \"2022-03-14T09:48:00Z\",\n  \"createdBy\": \"4yJ3n3D8E2\",\n  \"group\": \"3zMaadcd2U\",\n  \"id\": \"3w9XyTrkzk\",\n  \"privilege\": \"admin\",\n  \"resource\": \"production.namespace\",\n  \"updated\": \"2022-03-14T09:48:00Z\",\n  \"user\": \"6hNnjfjVcc\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.infrahq.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8c6f2864-230c-4bc2-90ea-5fab049be44d",
+    "name": "Infra Authentication Grants API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Infra API",
+      "type": "text/plain"
+    }
+  }
+}

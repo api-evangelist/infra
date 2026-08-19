@@ -1,0 +1,620 @@
+{
+  "item": [
+    {
+      "id": "30ade76c-61b5-4949-b925-5b5db5702873",
+      "name": "Settings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "df3169f1-f56f-4d02-8169-028aeb21a62b",
+          "name": "GetServerConfiguration",
+          "request": {
+            "name": "GetServerConfiguration",
+            "description": {
+              "content": "GetServerConfiguration",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "server-configuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b4013d2d-2abe-4c56-ae69-e14acb50e36d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "server-configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8890,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9fa9e96-a4ea-437e-b433-fde23b9b46d2",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "server-configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3994,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6b37ffd7-b040-4ced-a2a2-2a7041389906",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "server-configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3994,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2143a0b0-a1bc-406d-acb1-c888afec685c",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "server-configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3994,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88292dc6-bca0-42a6-b769-6c1f7e95a41b",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "server-configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3994,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e1c8c491-7432-4a08-8cfb-78f90c303a98",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "server-configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"baseDomain\": \"string\",\n  \"google\": {\n    \"authURL\": \"https://example.com/oauth2/v1/authorize\",\n    \"clientID\": \"0oapn0qwiQPiMIyR35d6\",\n    \"created\": \"2022-03-14T09:48:00Z\",\n    \"id\": \"4yJ3n3D8E2\",\n    \"kind\": \"oidc\",\n    \"name\": \"okta\",\n    \"scopes\": [\n      \"['openid', 'email']\",\n      \"['openid', 'email']\"\n    ],\n    \"updated\": \"2022-03-14T09:48:00Z\",\n    \"url\": \"infrahq.okta.com\"\n  },\n  \"isEmailConfigured\": false,\n  \"isSignupEnabled\": true,\n  \"loginDomain\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74fd2ee9-9142-4cf5-99d8-aac80f62d882",
+          "name": "Version",
+          "request": {
+            "name": "Version",
+            "description": {
+              "content": "Version",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "Infra-Version",
+                "value": "<\\d+\\.\\d+\\(.\\d+)?(-.\\w(+\\w)?)?>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41a3ecaa-f55f-4db1-ad80-2406ac1d98d9",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3994,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68f64596-c8ba-47d3-b910-8f7f9bc76ad9",
+              "name": "Unauthorized: Requestor is not authenticated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3994,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9663d548-903a-4f83-8e22-c9ed49b1ee85",
+              "name": "Forbidden: Requestor does not have the right permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3994,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f91580dc-ebe1-4fdc-9c06-237974d57f66",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3994,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4538ddfe-ee15-4613-803a-400db3cd7967",
+              "name": "Duplicate Record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3994,\n  \"fieldErrors\": [\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    },\n    {\n      \"errors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fieldName\": \"string\"\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a066669a-6af6-428d-8477-829699c7173f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "Infra-Version",
+                    "value": "0.0.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"version\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.infrahq.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "803af0cd-00d8-4160-8de4-a71e588d0aeb",
+    "name": "Infra Authentication Settings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Infra API",
+      "type": "text/plain"
+    }
+  }
+}

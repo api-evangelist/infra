@@ -1,0 +1,253 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Infra Authentication Users API",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UpdateUsersInGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.infrahq.com/api/groups/:id/users",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "UpdateUsersInGroup"
+        },
+        {
+          "info": {
+            "name": "ListUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.infrahq.com/api/users",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "name",
+                "value": "bob@example.com",
+                "type": "query",
+                "description": "Name of the user"
+              },
+              {
+                "name": "group",
+                "value": "admins",
+                "type": "query",
+                "description": "Group the user belongs to"
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "List of User IDs"
+              },
+              {
+                "name": "showSystem",
+                "value": "false",
+                "type": "query",
+                "description": "if true, this shows the connector and other internal users"
+              },
+              {
+                "name": "publicKeyFingerprint",
+                "value": "",
+                "type": "query",
+                "description": "Find the user with a public key that matches this SHA256 fingerprint."
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number to retrieve"
+              },
+              {
+                "name": "limit",
+                "value": "100",
+                "type": "query",
+                "description": "Number of objects to retrieve per page (up to 1000)"
+              }
+            ]
+          },
+          "docs": "ListUsers"
+        },
+        {
+          "info": {
+            "name": "CreateUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/users",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "CreateUser"
+        },
+        {
+          "info": {
+            "name": "AddUserPublicKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.infrahq.com/api/users/public-key",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "AddUserPublicKey"
+        },
+        {
+          "info": {
+            "name": "GetUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.infrahq.com/api/users/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetUser"
+        },
+        {
+          "info": {
+            "name": "UpdateUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.infrahq.com/api/users/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "UpdateUser"
+        },
+        {
+          "info": {
+            "name": "DeleteUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.infrahq.com/api/users/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteUser"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

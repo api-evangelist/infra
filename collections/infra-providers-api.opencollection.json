@@ -1,0 +1,196 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Infra Authentication Providers API",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Providers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListProviders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.infrahq.com/api/providers",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "name",
+                "value": "okta",
+                "type": "query",
+                "description": "Name of the provider"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number to retrieve"
+              },
+              {
+                "name": "limit",
+                "value": "100",
+                "type": "query",
+                "description": "Number of objects to retrieve per page (up to 1000)"
+              }
+            ]
+          },
+          "docs": "ListProviders"
+        },
+        {
+          "info": {
+            "name": "CreateProvider",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.infrahq.com/api/providers",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "CreateProvider"
+        },
+        {
+          "info": {
+            "name": "GetProvider",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.infrahq.com/api/providers/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "GetProvider"
+        },
+        {
+          "info": {
+            "name": "UpdateProvider",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.infrahq.com/api/providers/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "UpdateProvider"
+        },
+        {
+          "info": {
+            "name": "PatchProvider",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.infrahq.com/api/providers/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "PatchProvider"
+        },
+        {
+          "info": {
+            "name": "DeleteProvider",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.infrahq.com/api/providers/:id",
+            "headers": [
+              {
+                "name": "Infra-Version",
+                "value": ""
+              },
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "DeleteProvider"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
