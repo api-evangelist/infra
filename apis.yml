@@ -44,6 +44,17 @@ tags:
 - Kubernetes
 - OIDC
 - Security
+- Open-Source
+tags_raw:
+- Company
+- Identity
+- Access Management
+- Authentication
+- Authorization
+- Infrastructure
+- Kubernetes
+- OIDC
+- Security
 - Open Source
 image: https://avatars.githubusercontent.com/u/85984819
 apis:
@@ -89,6 +100,8 @@ apis:
   humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
   baseURL: https://api.infrahq.com
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -101,6 +114,8 @@ apis:
   humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
   baseURL: https://api.infrahq.com
   tags:
+  - Organization
+  tags_raw:
   - Organizations
   properties:
   - type: OpenAPI
@@ -137,6 +152,8 @@ apis:
   humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
   baseURL: https://api.infrahq.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
