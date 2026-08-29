@@ -4,8 +4,11 @@ info:
   version: 1.0.0
   summary: Create an identity for automation and issue an access key it can use for CI/CD or API calls.
 sourceDescriptions:
-- name: infra
-  url: ../openapi/infra-openapi-original.json
+- name: authenticationApi
+  url: ../openapi/infra-authentication-api-openapi.yml
+  type: openapi
+- name: usersApi
+  url: ../openapi/infra-users-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: createUserAndIssueKey
@@ -13,8 +16,8 @@ workflows:
   inputs:
     type: object
     properties:
-      userName: { type: string }
-      keyName: { type: string }
+      userName: {type: string}
+      keyName: {type: string}
   steps:
   - stepId: createUser
     operationId: CreateUser

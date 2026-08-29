@@ -4,8 +4,14 @@ info:
   version: 1.0.0
   summary: Create a user, put them in a group, and grant the group access to a destination.
 sourceDescriptions:
-- name: infra
-  url: ../openapi/infra-openapi-original.json
+- name: grantsApi
+  url: ../openapi/infra-grants-api-openapi.yml
+  type: openapi
+- name: groupsApi
+  url: ../openapi/infra-groups-api-openapi.yml
+  type: openapi
+- name: usersApi
+  url: ../openapi/infra-users-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: onboardAndGrant
@@ -13,10 +19,10 @@ workflows:
   inputs:
     type: object
     properties:
-      userName: { type: string }
-      groupId: { type: string }
-      privilege: { type: string }
-      resource: { type: string }
+      userName: {type: string}
+      groupId: {type: string}
+      privilege: {type: string}
+      resource: {type: string}
   steps:
   - stepId: createUser
     operationId: CreateUser
