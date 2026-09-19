@@ -90,6 +90,8 @@ apis:
   humanURL: https://github.com/infrahq/infra/blob/main/docs/reference/api.md
   baseURL: https://api.infrahq.com
   tags:
+  - Destination
+  tags_raw:
   - Destinations
   properties:
   - type: OpenAPI
