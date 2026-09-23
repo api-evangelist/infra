@@ -1,10 +1,10 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: Infra API
   license:
     name: Elastic License v2.0
     url: https://www.elastic.co/licensing/elastic-license
-  title: Infra Authentication Settings API
+  title: Infra Settings API
   version: 0.0.0
 servers:
 - url: https://api.infrahq.com
@@ -13,7 +13,6 @@ tags:
 paths:
   /api/server-configuration:
     get:
-      description: GetServerConfiguration
       operationId: GetServerConfiguration
       parameters:
       - in: header
@@ -66,7 +65,6 @@ paths:
       - Settings
   /api/version:
     get:
-      description: Version
       operationId: Version
       parameters:
       - in: header
@@ -137,10 +135,6 @@ components:
           type: array
         message:
           type: string
-    Version:
-      properties:
-        version:
-          type: string
     ServerConfiguration:
       properties:
         baseDomain:
@@ -197,4 +191,8 @@ components:
         isSignupEnabled:
           type: boolean
         loginDomain:
+          type: string
+    Version:
+      properties:
+        version:
           type: string

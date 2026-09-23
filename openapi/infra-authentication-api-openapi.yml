@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: Infra API
   license:
@@ -13,7 +13,6 @@ tags:
 paths:
   /api/access-keys:
     delete:
-      description: DeleteAccessKeys
       operationId: DeleteAccessKeys
       parameters:
       - in: header
@@ -84,7 +83,6 @@ paths:
       tags:
       - Authentication
     get:
-      description: ListAccessKeys
       operationId: ListAccessKeys
       parameters:
       - in: header
@@ -190,7 +188,6 @@ paths:
       tags:
       - Authentication
     post:
-      description: CreateAccessKey
       operationId: CreateAccessKey
       parameters:
       - in: header
@@ -288,7 +285,6 @@ paths:
       - Authentication
   /api/access-keys/{id}:
     delete:
-      description: DeleteAccessKey
       operationId: DeleteAccessKey
       parameters:
       - in: header
@@ -357,7 +353,6 @@ paths:
       - Authentication
   /api/device:
     post:
-      description: StartDeviceFlow
       operationId: StartDeviceFlow
       parameters:
       - in: header
@@ -410,7 +405,6 @@ paths:
       - Authentication
   /api/device/approve:
     post:
-      description: ApproveDeviceFlow
       operationId: ApproveDeviceFlow
       parameters:
       - in: header
@@ -483,7 +477,6 @@ paths:
       - Authentication
   /api/device/status:
     post:
-      description: GetDeviceFlowStatus
       operationId: GetDeviceFlowStatus
       parameters:
       - in: header
@@ -547,7 +540,6 @@ paths:
       - Authentication
   /api/login:
     post:
-      description: Login
       operationId: Login
       parameters:
       - in: header
@@ -640,7 +632,6 @@ paths:
       - Authentication
   /api/logout:
     post:
-      description: Logout
       operationId: Logout
       parameters:
       - in: header
@@ -701,7 +692,6 @@ paths:
       - Authentication
   /api/password-reset:
     post:
-      description: VerifiedPasswordReset
       operationId: VerifiedPasswordReset
       parameters:
       - in: header
@@ -770,7 +760,6 @@ paths:
       - Authentication
   /api/password-reset-request:
     post:
-      description: RequestPasswordReset
       operationId: RequestPasswordReset
       parameters:
       - in: header
@@ -834,29 +823,24 @@ paths:
       - Authentication
 components:
   schemas:
-    DeviceFlowResponse:
+    EmptyResponse: {}
+    Error:
       properties:
-        deviceCode:
-          description: a code that a device will use to exchange for an access key after device login is approved
-          example: NGU4QWFiNjQ5YmQwNG3YTdmZMEyNzQ3YzQ1YSA
-          type: string
-        expiresIn:
-          description: The number of seconds that this set of values is valid
-          example: '1800'
-          format: int16
+        code:
+          format: int32
           type: integer
-        interval:
-          description: the number of seconds the device should wait between polling to see if the user has finished logging in
-          example: '5'
-          format: int8
-          type: integer
-        userCode:
-          description: This is the text the user will enter at the Verification URI
-          example: BDSD-HQMK
-          type: string
-        verificationURI:
-          description: This is the URL the user needs to enter into their browser to start logging in
-          example: https://infrahq.com/device
+        fieldErrors:
+          items:
+            properties:
+              errors:
+                items:
+                  type: string
+                type: array
+              fieldName:
+                type: string
+            type: object
+          type: array
+        message:
           type: string
     LoginResponse:
       properties:
@@ -878,23 +862,43 @@ components:
           format: uid
           pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
           type: string
-    Error:
+    CreateAccessKeyResponse:
       properties:
-        code:
-          format: int32
-          type: integer
-        fieldErrors:
-          items:
-            properties:
-              errors:
-                items:
-                  type: string
-                type: array
-              fieldName:
-                type: string
-            type: object
-          type: array
-        message:
+        accessKey:
+          type: string
+        created:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        expires:
+          description: after this deadline the key is no longer valid
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        id:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        inactivityTimeout:
+          description: the key must be used by this time to remain valid
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        issuedForID:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        issuedForKind:
+          type: string
+        name:
+          type: string
+        providerID:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
           type: string
     ListResponse_AccessKey:
       properties:
@@ -984,45 +988,6 @@ components:
           example: '5'
           format: int
           type: integer
-    CreateAccessKeyResponse:
-      properties:
-        accessKey:
-          type: string
-        created:
-          description: formatted as an RFC3339 date-time
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-        expires:
-          description: after this deadline the key is no longer valid
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-        id:
-          example: 4yJ3n3D8E2
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-        inactivityTimeout:
-          description: the key must be used by this time to remain valid
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-        issuedForID:
-          example: 4yJ3n3D8E2
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-        issuedForKind:
-          type: string
-        name:
-          type: string
-        providerID:
-          example: 4yJ3n3D8E2
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-    EmptyResponse: {}
     DeviceFlowStatusResponse:
       properties:
         deviceCode:
@@ -1051,4 +1016,28 @@ components:
           type: object
         status:
           description: can be one of pending, expired, confirmed
+          type: string
+    DeviceFlowResponse:
+      properties:
+        deviceCode:
+          description: a code that a device will use to exchange for an access key after device login is approved
+          example: NGU4QWFiNjQ5YmQwNG3YTdmZMEyNzQ3YzQ1YSA
+          type: string
+        expiresIn:
+          description: The number of seconds that this set of values is valid
+          example: '1800'
+          format: int16
+          type: integer
+        interval:
+          description: the number of seconds the device should wait between polling to see if the user has finished logging in
+          example: '5'
+          format: int8
+          type: integer
+        userCode:
+          description: This is the text the user will enter at the Verification URI
+          example: BDSD-HQMK
+          type: string
+        verificationURI:
+          description: This is the URL the user needs to enter into their browser to start logging in
+          example: https://infrahq.com/device
           type: string

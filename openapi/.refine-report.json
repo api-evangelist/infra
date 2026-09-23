@@ -1,14 +1,7 @@
 {
   "provider": "infra",
   "sources": [
-    "infra-authentication-api-openapi.yml",
-    "infra-destinations-api-openapi.yml",
-    "infra-grants-api-openapi.yml",
-    "infra-groups-api-openapi.yml",
-    "infra-organizations-api-openapi.yml",
-    "infra-providers-api-openapi.yml",
-    "infra-settings-api-openapi.yml",
-    "infra-users-api-openapi.yml"
+    "_original/infra-openapi-original.json"
   ],
   "outputs": [
     "infra-authentication-api-openapi.yml",
@@ -23,6 +16,27 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "infra-openapi-original.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "infra-openapi-original.json: declared missing tag: Authentication",
+    "infra-openapi-original.json: declared missing tag: Destinations",
+    "infra-openapi-original.json: declared missing tag: Grants",
+    "infra-openapi-original.json: declared missing tag: Groups",
+    "infra-openapi-original.json: declared missing tag: Organizations",
+    "infra-openapi-original.json: declared missing tag: Providers",
+    "infra-openapi-original.json: declared missing tag: Settings",
+    "infra-openapi-original.json: declared missing tag: Users",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "infra-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "infra-destinations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "infra-grants-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "infra-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "infra-organizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "infra-providers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "infra-settings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "infra-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
