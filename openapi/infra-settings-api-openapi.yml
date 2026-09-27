@@ -135,6 +135,10 @@ components:
           type: array
         message:
           type: string
+    Version:
+      properties:
+        version:
+          type: string
     ServerConfiguration:
       properties:
         baseDomain:
@@ -191,8 +195,4 @@ components:
         isSignupEnabled:
           type: boolean
         loginDomain:
-          type: string
-    Version:
-      properties:
-        version:
           type: string

@@ -21,6 +21,10 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 deliveryModel:
   model: unknown
+  license_evidence:
+    repo: infrahq/infra
+    spdx: NOASSERTION
+    stars: 1467
   open_source: unknown
   commercial: false
   callable_host: false
@@ -29,7 +33,7 @@ deliveryModel:
   source:
   - openapi
   - repository-unlicensed
-  generated: '2026-08-28'
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: unknown
@@ -58,7 +62,7 @@ tags:
 - Kubernetes
 - OIDC
 - Security
-- Open-Source
+- Open Source
 tags_raw:
 - Company
 - Identity
@@ -70,6 +74,7 @@ tags_raw:
 - OIDC
 - Security
 - Open Source
+- Open-Source
 image: https://avatars.githubusercontent.com/u/85984819
 apis:
 - aid: infra:infra-authentication-api

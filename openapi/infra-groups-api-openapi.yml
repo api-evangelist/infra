@@ -411,6 +411,51 @@ paths:
       - Groups
 components:
   schemas:
+    Error:
+      properties:
+        code:
+          format: int32
+          type: integer
+        fieldErrors:
+          items:
+            properties:
+              errors:
+                items:
+                  type: string
+                type: array
+              fieldName:
+                type: string
+            type: object
+          type: array
+        message:
+          type: string
+    Group:
+      properties:
+        created:
+          description: Date the group was created
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        id:
+          description: Group ID
+          example: gauEdoYCEU
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        name:
+          description: Name of the group
+          example: admins
+          type: string
+        totalUsers:
+          description: Total number of users in the group
+          example: '14'
+          format: int
+          type: integer
+        updated:
+          description: Date the group was updated
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
     EmptyResponse: {}
     ListResponse_Group:
       properties:
@@ -469,48 +514,3 @@ components:
           example: '5'
           format: int
           type: integer
-    Group:
-      properties:
-        created:
-          description: Date the group was created
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-        id:
-          description: Group ID
-          example: gauEdoYCEU
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-        name:
-          description: Name of the group
-          example: admins
-          type: string
-        totalUsers:
-          description: Total number of users in the group
-          example: '14'
-          format: int
-          type: integer
-        updated:
-          description: Date the group was updated
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-    Error:
-      properties:
-        code:
-          format: int32
-          type: integer
-        fieldErrors:
-          items:
-            properties:
-              errors:
-                items:
-                  type: string
-                type: array
-              fieldName:
-                type: string
-            type: object
-          type: array
-        message:
-          type: string
