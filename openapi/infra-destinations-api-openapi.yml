@@ -622,6 +622,16 @@ components:
         version:
           description: Application version of the connector for this destination
           type: string
+    EmptyResponse: {}
+    CreateTokenResponse:
+      properties:
+        expires:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        token:
+          type: string
     ListResponse_Destination:
       properties:
         count:
@@ -745,14 +755,4 @@ components:
             type: object
           type: array
         message:
-          type: string
-    EmptyResponse: {}
-    CreateTokenResponse:
-      properties:
-        expires:
-          description: formatted as an RFC3339 date-time
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-        token:
           type: string

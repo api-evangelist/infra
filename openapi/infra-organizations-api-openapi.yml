@@ -451,25 +451,6 @@ paths:
       - Organizations
 components:
   schemas:
-    Error:
-      properties:
-        code:
-          format: int32
-          type: integer
-        fieldErrors:
-          items:
-            properties:
-              errors:
-                items:
-                  type: string
-                type: array
-              fieldName:
-                type: string
-            type: object
-          type: array
-        message:
-          type: string
-    EmptyResponse: {}
     Organization:
       properties:
         allowedDomains:
@@ -498,6 +479,24 @@ components:
           description: formatted as an RFC3339 date-time
           example: '2022-03-14T09:48:00Z'
           format: date-time
+          type: string
+    Error:
+      properties:
+        code:
+          format: int32
+          type: integer
+        fieldErrors:
+          items:
+            properties:
+              errors:
+                items:
+                  type: string
+                type: array
+              fieldName:
+                type: string
+            type: object
+          type: array
+        message:
           type: string
     ListResponse_Organization:
       properties:
@@ -558,3 +557,4 @@ components:
           example: '5'
           format: int
           type: integer
+    EmptyResponse: {}

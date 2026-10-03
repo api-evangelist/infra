@@ -823,68 +823,6 @@ paths:
       - Authentication
 components:
   schemas:
-    LoginResponse:
-      properties:
-        accessKey:
-          type: string
-        expires:
-          description: formatted as an RFC3339 date-time
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-        name:
-          type: string
-        organizationName:
-          type: string
-        passwordUpdateRequired:
-          type: boolean
-        userID:
-          example: 4yJ3n3D8E2
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-    Error:
-      properties:
-        code:
-          format: int32
-          type: integer
-        fieldErrors:
-          items:
-            properties:
-              errors:
-                items:
-                  type: string
-                type: array
-              fieldName:
-                type: string
-            type: object
-          type: array
-        message:
-          type: string
-    DeviceFlowResponse:
-      properties:
-        deviceCode:
-          description: a code that a device will use to exchange for an access key after device login is approved
-          example: NGU4QWFiNjQ5YmQwNG3YTdmZMEyNzQ3YzQ1YSA
-          type: string
-        expiresIn:
-          description: The number of seconds that this set of values is valid
-          example: '1800'
-          format: int16
-          type: integer
-        interval:
-          description: the number of seconds the device should wait between polling to see if the user has finished logging in
-          example: '5'
-          format: int8
-          type: integer
-        userCode:
-          description: This is the text the user will enter at the Verification URI
-          example: BDSD-HQMK
-          type: string
-        verificationURI:
-          description: This is the URL the user needs to enter into their browser to start logging in
-          example: https://infrahq.com/device
-          type: string
     CreateAccessKeyResponse:
       properties:
         accessKey:
@@ -922,6 +860,35 @@ components:
           example: 4yJ3n3D8E2
           format: uid
           pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+    DeviceFlowStatusResponse:
+      properties:
+        deviceCode:
+          example: ''
+          type: string
+        login:
+          properties:
+            accessKey:
+              type: string
+            expires:
+              description: formatted as an RFC3339 date-time
+              example: '2022-03-14T09:48:00Z'
+              format: date-time
+              type: string
+            name:
+              type: string
+            organizationName:
+              type: string
+            passwordUpdateRequired:
+              type: boolean
+            userID:
+              example: 4yJ3n3D8E2
+              format: uid
+              pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+              type: string
+          type: object
+        status:
+          description: can be one of pending, expired, confirmed
           type: string
     ListResponse_AccessKey:
       properties:
@@ -1011,33 +978,66 @@ components:
           example: '5'
           format: int
           type: integer
+    LoginResponse:
+      properties:
+        accessKey:
+          type: string
+        expires:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        name:
+          type: string
+        organizationName:
+          type: string
+        passwordUpdateRequired:
+          type: boolean
+        userID:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
     EmptyResponse: {}
-    DeviceFlowStatusResponse:
+    Error:
+      properties:
+        code:
+          format: int32
+          type: integer
+        fieldErrors:
+          items:
+            properties:
+              errors:
+                items:
+                  type: string
+                type: array
+              fieldName:
+                type: string
+            type: object
+          type: array
+        message:
+          type: string
+    DeviceFlowResponse:
       properties:
         deviceCode:
-          example: ''
+          description: a code that a device will use to exchange for an access key after device login is approved
+          example: NGU4QWFiNjQ5YmQwNG3YTdmZMEyNzQ3YzQ1YSA
           type: string
-        login:
-          properties:
-            accessKey:
-              type: string
-            expires:
-              description: formatted as an RFC3339 date-time
-              example: '2022-03-14T09:48:00Z'
-              format: date-time
-              type: string
-            name:
-              type: string
-            organizationName:
-              type: string
-            passwordUpdateRequired:
-              type: boolean
-            userID:
-              example: 4yJ3n3D8E2
-              format: uid
-              pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-              type: string
-          type: object
-        status:
-          description: can be one of pending, expired, confirmed
+        expiresIn:
+          description: The number of seconds that this set of values is valid
+          example: '1800'
+          format: int16
+          type: integer
+        interval:
+          description: the number of seconds the device should wait between polling to see if the user has finished logging in
+          example: '5'
+          format: int8
+          type: integer
+        userCode:
+          description: This is the text the user will enter at the Verification URI
+          example: BDSD-HQMK
+          type: string
+        verificationURI:
+          description: This is the URL the user needs to enter into their browser to start logging in
+          example: https://infrahq.com/device
           type: string

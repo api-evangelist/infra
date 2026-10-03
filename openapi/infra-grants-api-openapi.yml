@@ -611,6 +611,7 @@ components:
           description: Indicates that grant was successfully created, false it already existed beforehand
           example: 'true'
           type: boolean
+    EmptyResponse: {}
     ListResponse_Grant:
       properties:
         count:
@@ -747,4 +748,3 @@ components:
           format: uid
           pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
           type: string
-    EmptyResponse: {}

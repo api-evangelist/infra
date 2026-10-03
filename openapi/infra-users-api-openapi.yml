@@ -597,6 +597,48 @@ paths:
       - Users
 components:
   schemas:
+    CreateUserResponse:
+      properties:
+        id:
+          description: User ID
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        name:
+          description: Email address of the user
+          example: bob@example.com
+          type: string
+        oneTimePassword:
+          description: One-time password (only returned when self-hosted)
+          example: password
+          type: string
+    UserPublicKey:
+      properties:
+        created:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        expires:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        fingerprint:
+          description: SHA256 fingerprint of the key
+          type: string
+        id:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        keyType:
+          type: string
+        name:
+          type: string
+        publicKey:
+          type: string
     User:
       properties:
         created:
@@ -667,6 +709,7 @@ components:
           example: '2022-03-14T09:48:00Z'
           format: date-time
           type: string
+    EmptyResponse: {}
     UpdateUserResponse:
       properties:
         created:
@@ -857,46 +900,3 @@ components:
           example: '5'
           format: int
           type: integer
-    CreateUserResponse:
-      properties:
-        id:
-          description: User ID
-          example: 4yJ3n3D8E2
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-        name:
-          description: Email address of the user
-          example: bob@example.com
-          type: string
-        oneTimePassword:
-          description: One-time password (only returned when self-hosted)
-          example: password
-          type: string
-    EmptyResponse: {}
-    UserPublicKey:
-      properties:
-        created:
-          description: formatted as an RFC3339 date-time
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-        expires:
-          description: formatted as an RFC3339 date-time
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-        fingerprint:
-          description: SHA256 fingerprint of the key
-          type: string
-        id:
-          example: 4yJ3n3D8E2
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-        keyType:
-          type: string
-        name:
-          type: string
-        publicKey:
-          type: string
