@@ -1,0 +1,65 @@
+slug: infra
+provider: Infra
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: Grants
+  spec_file: infra-grants-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: 'POST /api/grants CreateGrant; schemas CreateGrantResponse, Grant — vendor: "fine-grained
+    grants on destination resources"'
+  reason: Operations create, update and delete access grants that bind identities/groups to roles on infrastructure
+    destinations — this is access authorisation management, i.e. Identity & Access Management.
+- tag: Providers
+  spec_file: infra-providers-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.88
+  evidence: 'POST /api/providers CreateProvider — vendor: "connecting an organization''s OIDC identity
+    providers (Okta, Google, Azure AD, and others)"'
+  reason: Providers here are OIDC identity providers registered for federated login, which is squarely
+    identity federation within Identity & Access Management.
+- tag: Authentication
+  spec_file: infra-authentication-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: POST /api/login, POST /api/logout, CreateAccessKey, RequestPasswordReset; vendor is "open-source
+    authentication and access management for infrastructure"
+  reason: 'Although authentication is often plumbing, here the API is the vendor''s product: credential
+    issuance, login/logout, device flow and password reset constitute Identity & Access Management as
+    a delivered capability.'
+- tag: Users
+  spec_file: infra-users-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: POST /api/users CreateUser; PUT /api/users/public-key AddUserPublicKey
+  reason: User identity lifecycle (create/update/delete) plus public-key registration for infrastructure
+    access is IAM account administration, not HR employee records.
+- tag: Groups
+  spec_file: infra-groups-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.82
+  evidence: PATCH /api/groups/{id}/users UpdateUsersInGroup
+  reason: Group CRUD plus membership updates exist to assign least-privilege roles to users and groups
+    in an access-management product; this is IAM group/role administration rather than any HR or CRM notion
+    of groups.
