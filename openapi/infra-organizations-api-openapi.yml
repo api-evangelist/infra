@@ -451,53 +451,6 @@ paths:
       - Organizations
 components:
   schemas:
-    Organization:
-      properties:
-        allowedDomains:
-          description: domains which can be used to login to this organization
-          example: '[''example.com'', ''infrahq.com'']'
-          items:
-            description: domains which can be used to login to this organization
-            example: '[''example.com'', ''infrahq.com'']'
-            type: string
-          type: array
-        created:
-          description: formatted as an RFC3339 date-time
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-        domain:
-          type: string
-        id:
-          example: 4yJ3n3D8E2
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-        name:
-          type: string
-        updated:
-          description: formatted as an RFC3339 date-time
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-    Error:
-      properties:
-        code:
-          format: int32
-          type: integer
-        fieldErrors:
-          items:
-            properties:
-              errors:
-                items:
-                  type: string
-                type: array
-              fieldName:
-                type: string
-            type: object
-          type: array
-        message:
-          type: string
     ListResponse_Organization:
       properties:
         count:
@@ -557,4 +510,51 @@ components:
           example: '5'
           format: int
           type: integer
+    Organization:
+      properties:
+        allowedDomains:
+          description: domains which can be used to login to this organization
+          example: '[''example.com'', ''infrahq.com'']'
+          items:
+            description: domains which can be used to login to this organization
+            example: '[''example.com'', ''infrahq.com'']'
+            type: string
+          type: array
+        created:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        domain:
+          type: string
+        id:
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        name:
+          type: string
+        updated:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
     EmptyResponse: {}
+    Error:
+      properties:
+        code:
+          format: int32
+          type: integer
+        fieldErrors:
+          items:
+            properties:
+              errors:
+                items:
+                  type: string
+                type: array
+              fieldName:
+                type: string
+            type: object
+          type: array
+        message:
+          type: string

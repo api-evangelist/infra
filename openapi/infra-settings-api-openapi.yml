@@ -117,24 +117,6 @@ paths:
       - Settings
 components:
   schemas:
-    Error:
-      properties:
-        code:
-          format: int32
-          type: integer
-        fieldErrors:
-          items:
-            properties:
-              errors:
-                items:
-                  type: string
-                type: array
-              fieldName:
-                type: string
-            type: object
-          type: array
-        message:
-          type: string
     ServerConfiguration:
       properties:
         baseDomain:
@@ -195,4 +177,22 @@ components:
     Version:
       properties:
         version:
+          type: string
+    Error:
+      properties:
+        code:
+          format: int32
+          type: integer
+        fieldErrors:
+          items:
+            properties:
+              errors:
+                items:
+                  type: string
+                type: array
+              fieldName:
+                type: string
+            type: object
+          type: array
+        message:
           type: string
