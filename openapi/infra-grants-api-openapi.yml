@@ -563,55 +563,6 @@ paths:
       - Grants
 components:
   schemas:
-    CreateGrantResponse:
-      properties:
-        created:
-          description: formatted as an RFC3339 date-time
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-        createdBy:
-          description: id of the user that created the grant
-          example: 4yJ3n3D8E2
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-        group:
-          description: GroupID for a group being granted access
-          example: 3zMaadcd2U
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-        id:
-          description: ID of grant created
-          example: 3w9XyTrkzk
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-        privilege:
-          description: a role or permission
-          example: admin
-          type: string
-        resource:
-          description: a resource name in Infra's Universal Resource Notation
-          example: production.namespace
-          type: string
-        updated:
-          description: formatted as an RFC3339 date-time
-          example: '2022-03-14T09:48:00Z'
-          format: date-time
-          type: string
-        user:
-          description: UserID for a user being granted access
-          example: 6hNnjfjVcc
-          format: uid
-          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
-          type: string
-        wasCreated:
-          description: Indicates that grant was successfully created, false it already existed beforehand
-          example: 'true'
-          type: boolean
-    EmptyResponse: {}
     ListResponse_Grant:
       properties:
         count:
@@ -730,6 +681,7 @@ components:
           format: uid
           pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
           type: string
+    EmptyResponse: {}
     Error:
       properties:
         code:
@@ -748,3 +700,51 @@ components:
           type: array
         message:
           type: string
+    CreateGrantResponse:
+      properties:
+        created:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        createdBy:
+          description: id of the user that created the grant
+          example: 4yJ3n3D8E2
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        group:
+          description: GroupID for a group being granted access
+          example: 3zMaadcd2U
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        id:
+          description: ID of grant created
+          example: 3w9XyTrkzk
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        privilege:
+          description: a role or permission
+          example: admin
+          type: string
+        resource:
+          description: a resource name in Infra's Universal Resource Notation
+          example: production.namespace
+          type: string
+        updated:
+          description: formatted as an RFC3339 date-time
+          example: '2022-03-14T09:48:00Z'
+          format: date-time
+          type: string
+        user:
+          description: UserID for a user being granted access
+          example: 6hNnjfjVcc
+          format: uid
+          pattern: '[1-9a-km-zA-HJ-NP-Z]{1,11}'
+          type: string
+        wasCreated:
+          description: Indicates that grant was successfully created, false it already existed beforehand
+          example: 'true'
+          type: boolean
