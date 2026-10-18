@@ -55,12 +55,12 @@ modified: '2026-07-19'
 tags:
 - Company
 - Identity
-- Access Management
+- Identity and Access Management
 - Authentication
 - Authorization
 - Infrastructure
 - Kubernetes
-- OIDC
+- OpenID Connect
 - Security
 - Open Source
 tags_raw:
